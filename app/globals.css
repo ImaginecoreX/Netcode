@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100;0,8..144,200;0,8..144,300;0,8..144,400;0,8..144,500;0,8..144,600;0,8..144,700;0,8..144,800;0,8..144,900;1,8..144,100;1,8..144,200;1,8..144,300;1,8..144,400;1,8..144,500;1,8..144,600;1,8..144,700;1,8..144,800;1,8..144,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root[theme="light"] {
+
+  --btx-primary: #000;
+  --theme: #fff;
+  --foreground-rgb:black;
+
+  --text-wb: white;
+}
+
+:root[theme="dark"] {
+
+  --btx-primary: #fff;
+  --theme: #000;
+  --foreground-rgb:white;
+
+  --text-wb: black;
+}
+
+.font-family-Roboto-Serif {font-family: 'Roboto Serif', serif;}
+.font-family-Lora {font-family: 'Lora', serif;}
+.font-family-Roboto {font-family: 'Roboto', sans-serif;}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--theme);
+  font-family: 'Roboto Serif', serif;
+}
+
+.bgPrimary{background: var(--btx-primary);}
+.text-wb{color: var(--text-wb);}
+
+.BTNShadow{
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Media Queries ============================================ */
+
+@media (max-width: 359px) {
+  /* Your CSS rules for small screens here */
+  .frame-container {
+    width: 90%;
+  }
+}
+
+/* Small small Screen (ss) */
+@media (min-width:360px) and (max-width: 640px) {
+  /* Your CSS rules for small screens here */
+  .frame-container {
+    width: calc(100% - 24px);/*100% - 32px - default {16, 24, 32}*/
+  }
+}
+
+/* Small Screen (sm) */
+@media (min-width: 640px) and (max-width: 767px) {
+  /* Your CSS rules for small screens here */
+  .frame-container {
+    width: 94%;
+  }
+}
+
+/* Medium Screen (md) */
+@media (min-width: 768px) and (max-width: 1119px) {
+  /* Your CSS rules for medium screens here */
+  .frame-container {
+    width: 94%;
+  }
+}
+
+/* Large Screen (lg) */
+@media (min-width: 1120px) and (max-width: 1279px) {
+  /* Your CSS rules for large screens here */
+  .frame-container {
+    width: 90%;
+  }
+}
+
+/* Extra Large Screen (xl) */
+@media (min-width: 1280px) and (max-width: 1399px) {
+  /* Your CSS rules for extra large screens here */
+  .frame-container {
+    width: 90%;
+  }
+}
+
+/* 2 Extra Large Screen (2xl) */
+@media (min-width: 1400px) and (max-width: 1859px) {
+  /* Your CSS rules for 2 extra large screens here */
+  .frame-container {
+    width: 1344px;
+  }
+}
+
+/* 3 Extra Large Screen (3xl) */
+@media (min-width: 1860px) {
+  /* Your CSS rules for 3 extra large screens here */
+  .frame-container {
+    width: 1728px;
+  }
+}

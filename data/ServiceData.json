@@ -1,0 +1,38 @@
+[
+  {
+    "title":"Web Development",
+    "description":"Empower your business online with our top-tier web development services. Precision in every line of code, excellence in every design element",
+    "specialChar":"W",
+    "icon":"WebDevelopIcon"
+  },
+  {
+    "title":"Mobile Applications",
+    "description":"Empower your business online with our top-tier web development services. Precision in every line of code, excellence in every design element",
+    "specialChar":"M",
+    "icon":"MobileDevelopIcon"
+  },
+  {
+    "title":"Desktop Applications",
+    "description":"Empower your business online with our top-tier web development services. Precision in every line of code, excellence in every design element",
+    "specialChar":"D",
+    "icon":"DesktopDevelopIcon"
+  },
+  {
+    "title":"Custom Software",
+    "description":"Empower your business online with our top-tier web development services. Precision in every line of code, excellence in every design element",
+    "specialChar":"C",
+    "icon":"CustomDevelopIcon"
+  },
+  {
+    "title":"Deployment",
+    "description":"Empower your business online with our top-tier web development services. Precision in every line of code, excellence in every design element",
+    "specialChar":"P",
+    "icon":"DeploymentIcon"
+  },
+  {
+    "title":"SEO",
+    "description":"Empower your business online with our top-tier web development services. Precision in every line of code, excellence in every design element",
+    "specialChar":"S",
+    "icon":"SEOIcon"
+  }
+]

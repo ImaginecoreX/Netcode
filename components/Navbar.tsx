@@ -5,7 +5,7 @@ import lightMode from '@/public/lightMode.svg';
 
 const Navbar = () => {
   return (
-  <div className='w-full flex flex-col items-center py-[28px] fixed top-0 backdrop-blur-lg z-50'>
+  <div className='w-full flex flex-col items-center py-[28px] fixed top-0 backdrop-blur-lg z-50 bg-[#FFFFFF99]'>
       <div className='flex frame-container w-full justify-between items-center'>
       {/* column 1 */}
         <div className='flex items-center'>

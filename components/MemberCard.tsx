@@ -5,6 +5,13 @@ import github from '@/public/github.svg';
 import instagram from '@/public/instagram-black.svg';
 import Image from 'next/image';
 import nethmina from '@/public/nethmina.jpeg';
+import yasith from '@/public/yasith.jpeg';
+import menaka from '@/public/menaka.jpeg';
+import savindya from '@/public/savindya.jpeg';
+import gayuru from '@/public/gayuru.jpeg';
+import sahan from '@/public/sahan.jpeg';
+import noha from '@/public/noha.jpeg';
+import sasindu from '@/public/sasindu.jpeg';
 
 interface MemberCardProps {
   data: any
@@ -18,6 +25,20 @@ const MemberCard:React.FC<MemberCardProps> = ({data}) => {
 
     if(data.img === 'nethmina'){
       setMemberImg(nethmina);
+    }else if(data.img === 'yasith'){
+      setMemberImg(yasith);
+    }else if(data.img === 'menaka'){
+      setMemberImg(menaka);
+    }else if(data.img === 'savindya'){
+      setMemberImg(savindya);
+    }else if(data.img === 'sahan'){
+      setMemberImg(sahan);
+    }else if(data.img === 'gayuru'){
+      setMemberImg(gayuru);
+    }else if(data.img === 'noha'){
+      setMemberImg(noha);
+    }else if(data.img === 'sasindu'){
+      setMemberImg(sasindu);
     }
 
   },[data]);

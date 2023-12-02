@@ -97,14 +97,15 @@ const Navbar = () => {
     return clearInterval(handleEmojiChange);
   },[currentIndex]);
 
+  // text-[#005DA7]
 
   return (
     <div className='w-full flex flex-col items-center py-[28px] fixed top-0 backdrop-blur-lg z-50 bg-[#FFFFFF99]'>
       <div className='flex frame-container w-full justify-between items-center'>
         {/* column 1 */}
-        <div className='flex items-center'>
+        <div className='flex items-center gap-[12px]'>
           <div><Image src={Netcode} alt='Netcode' className='' /></div>
-          <div className='text-[20px] font-medium text-[#005DA7] text-center'>Netcode</div>
+          <div className='text-[20px] font-medium text-black text-center'>Netcode</div>
         </div>
 
         {/* small screen */}

@@ -9,6 +9,10 @@ import MembersData from '@/data/MembersData.json';
 import ContactContainer from '@/components/ContactContainer';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import VerticleSlide from '@/components/VerticleSlide';
+import ProjectCardData from '@/data/ProjectData.json';
+import futureKidImg from '@/public/explore_img1.jpg';
+import kidPlayingImg from '@/public/explore_img2.jpg';
 
 export default function Home() {
   return (
@@ -43,7 +47,7 @@ export default function Home() {
             </div>
 
             <div className='absolute right-0 top-[70px] sm:hidden nsTsm:hidden md:hidden lg:block xl:block 2xl:block'>
-              <div className='w-[432px] h-[540px] flex-shrink-0  shadow-md bg-[#FCFDFF]'></div>
+              <div className='w-[432px] h-[540px] flex-shrink-0  shadow-md bg-[#FCFDFF] relative'><Image src={futureKidImg} alt='Future Kids' className='w-full h-full object-cover'/></div>
             </div>
 
       </div>
@@ -58,7 +62,7 @@ export default function Home() {
     {/* column 1 */}
         <div className='nsTsm:w-full'>
             <div className='nsTsm:w-full'>
-              <div className='w-[432px] h-[540px] nsTsm:w-full flex-shrink-0 shadow-md bg-[#FCFDFF]'></div>
+              <div className='w-[432px] h-[540px] nsTsm:w-full flex-shrink-0 shadow-md bg-[#FCFDFF] relative'><Image src={kidPlayingImg} alt='Future Kids' className='w-full h-full object-cover'/></div>
             </div>
         </div>
 
@@ -108,7 +112,13 @@ export default function Home() {
         </div>
 
         <div className='w-full flex flex-col items-center'>
-          <ProjectCard/>
+  
+        {ProjectCardData.slice(0,1).map((project, index)=>(
+          <>
+           <ProjectCard discription={project.discription} img={project.img} title={project.title} web={project.web} key={index}/>
+          </>
+        ))}
+  
           <div className='flex items-center gap-[10px] mt-[50px]'>
             <div className='w-[10px] h-[10px] rounded-full bg-black'></div>
             <div className='w-[10px] h-[10px] rounded-full bg-black opacity-[0.12]'></div>

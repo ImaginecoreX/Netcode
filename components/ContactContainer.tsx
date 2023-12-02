@@ -78,21 +78,21 @@ const ContactContainer = () => {
         <button className='w-full bg-black h-[60px] rounded-[12px] text-white text-[24px] font-semibold'>Send</button>
       </div>
       <div className='mt-[60px] 2xl:hidden xl:hidden lg:hidden'>
-          <div><div className='text-[30px] font-medium'>Send us an email:</div></div>
+          <div><div className='text-[30px] font-medium'>Send us an email</div></div>
           <div><div className='text-[20px] font-medium text-[#0780FF]'>teams.netcode@gmail.com</div></div>
         </div>
 
-        <div className='mt-[48px] 2xl:hidden xl:hidden lg:hidden'>
-          <div><div className='text-[30px] font-medium'>Contact us:</div></div>
+        <div className='mt-[48px] 2xl:hidden xl:hidden lg:hidden nsTsm:flex nsTsm:flex-col nsTsm:items-center'>
+          <div><div className='text-[30px] font-medium'>Contact us</div></div>
           <div><div className='text-[20px] font-medium text-[#0780FF]'>+94 74 3837 327</div></div>
         </div>
 
-        <div className='flex items-center gap-[30px] mt-[60px] 2xl:hidden xl:hidden lg:hidden'>
-          <div className='p-[17px] bg-black rounded-full BTNShadow w-fit flex items-center justify-center flex-shrink-0'><Image src={github} alt='GitHub' className='w-[26px] h-[26px] flex-shrink-0' /></div>
-          <div className='p-[17px] bg-black rounded-full BTNShadow w-fit flex items-center justify-center flex-shrink-0'><Image src={x} alt='X' className='w-[26px] h-[26px] flex-shrink-0' /></div>
-          <div className='p-[17px] bg-black rounded-full BTNShadow w-fit flex items-center justify-center flex-shrink-0'><Image src={instagram} alt='Instagram' className='w-[26px] h-[26px] flex-shrink-0' /></div>
-          <div className='p-[17px] bg-black rounded-full BTNShadow w-fit flex items-center justify-center flex-shrink-0'><Image src={facebook} alt='Facebook' className='w-[26px] h-[26px] flex-shrink-0' /></div>
-          <div className='p-[17px] bg-black rounded-full BTNShadow w-fit flex items-center justify-center flex-shrink-0'><Image src={linkedind} alt='LinkedIn' className='w-[26px] h-[26px] flex-shrink-0' /></div>
+        <div className='flex items-center gap-[30px] nsTsm:gap-[26px] mt-[60px] 2xl:hidden xl:hidden lg:hidden'>
+          <div className='p-[17px] nsTsm:p-[12px] bg-black rounded-full BTNShadow w-fit flex items-center justify-center flex-shrink-0'><Image src={github} alt='GitHub' className='w-[26px] h-[26px] nsTsm:w-[18px] nsTsm:h-[18px]' /></div>
+          <div className='p-[17px] nsTsm:p-[12px] bg-black rounded-full BTNShadow w-fit flex items-center justify-center flex-shrink-0'><Image src={x} alt='X' className='w-[26px] h-[26px] nsTsm:w-[18px] nsTsm:h-[18px]' /></div>
+          <div className='p-[17px] nsTsm:p-[12px] bg-black rounded-full BTNShadow w-fit flex items-center justify-center flex-shrink-0'><Image src={instagram} alt='Instagram' className='w-[26px] h-[26px] nsTsm:w-[18px] nsTsm:h-[18px]' /></div>
+          <div className='p-[17px] nsTsm:p-[12px] bg-black rounded-full BTNShadow w-fit flex items-center justify-center flex-shrink-0'><Image src={facebook} alt='Facebook' className='w-[26px] h-[26px] nsTsm:w-[18px] nsTsm:h-[18px]' /></div>
+          <div className='p-[17px] nsTsm:p-[12px] bg-black rounded-full BTNShadow w-fit flex items-center justify-center flex-shrink-0'><Image src={linkedind} alt='LinkedIn' className='w-[26px] h-[26px] nsTsm:w-[18px] nsTsm:h-[18px]' /></div>
         </div>
     </div>
   )

@@ -12,7 +12,7 @@ import Navbar from '@/components/Navbar';
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full flex flex-col items-center">
+    <main className="min-h-screen w-full flex flex-col items-center overflow-hidden">
       <Navbar/>
       <SocialSnackBar/>
 
@@ -20,10 +20,10 @@ export default function Home() {
         <section className='w-full flex justify-center items-center min-h-screen'>
           <div className='frame-container flex flex-col items-center justify-center'>
 
-              <div className='w-[80%]'><div className='text-center text-[64px] font-semibold leading-normal'>Let’s Build Your Software Journey Right Now!</div></div>
+              <div className='w-[80%]'><div className='text-center text-[64px] font-semibold leading-normal nsTsm:text-[48px] nsTsm:pt-[100px]'>Let’s Build Your Software Journey Right Now!</div></div>
               <div className='pt-[30px]'><div className='font-family-Lora text-center italic text-[32px]'>Crafting Digital Excellence.</div></div>
               <div className='mt-[48px]'><button className='bg-black text-white text-[24px] font-semibold text-center py-[20px] px-[70px]'>Contact us</button></div>
-              <div className='mt-[21px]'><div className='font-family-Lora italic font-normal text-center text-[14px]'>let’s innovate the world together</div></div>
+              <div className='mt-[21px] nsTsm:pb-[40px]'><div className='font-family-Lora italic font-normal text-center text-[14px]'>let’s innovate the world together</div></div>
 
           </div>
         </section>
@@ -36,9 +36,9 @@ export default function Home() {
 
             <div className=''>
               
-             <div className=''> <Chips colorCode='#00B2FF' title='About us' bg={true} /></div>
-              <div className='mt-[38px] w-[30%] nsTsm:w-[60%]'><div className='font-family-Lora text-[32px] italic font-medium'>At NetCode, we innovate, we create, we excel.</div></div>
-              <div className='mt-[14px] w-[50%] nsTsm:w-[90%]'><div className='text-[14px] font-normal leading-[24px]'>Welcome to the heart of our digital journey. We are NetCode, a passionate team of full-stack software engineers and IT enthusiasts who are dedicated to transforming ideas into extraordinary digital solutions. With a relentless pursuit of innovation and an unwavering commitment to excellence, we have established ourselves as a beacon of creativity and reliability in the world of technology.</div></div>
+             <div className='nsTsm:w-full nsTsm:flex nsTsm:justify-end nsTsm:pr-[16px]'> <Chips colorCode='#00B2FF' title='About us' bg={true} /></div>
+              <div className='mt-[38px] w-[30%]  nsTsm:flex nsTsm:justify-end nsTsm:w-full nsTsm:pr-[16px]'><div className='font-family-Lora text-[32px] nsTsm:text-right nsTsm:w-[80%] italic font-medium'>At NetCode, we innovate, we create, we excel.</div></div>
+              <div className='mt-[14px] w-[50%] nsTsm:w-full nsTsm:flex nsTsm:justify-end nsTsm:pr-[16px]'><div className='text-[14px] font-normal leading-[24px] nsTsm:text-right nsTsm:w-[80%]'>Welcome to the heart of our digital journey. We are NetCode, a passionate team of full-stack software engineers and IT enthusiasts who are dedicated to transforming ideas into extraordinary digital solutions. With a relentless pursuit of innovation and an unwavering commitment to excellence, we have established ourselves as a beacon of creativity and reliability in the world of technology.</div></div>
 
             </div>
 
@@ -56,9 +56,9 @@ export default function Home() {
       <div className='frame-container flex items-center gap-[180px] nsTsm:gap-[120px] justify-center nsTsm:flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row'>
 
     {/* column 1 */}
-        <div>
-            <div>
-              <div className='w-[432px] h-[540px] flex-shrink-0  shadow-md bg-[#FCFDFF]'></div>
+        <div className='nsTsm:w-full'>
+            <div className='nsTsm:w-full'>
+              <div className='w-[432px] h-[540px] nsTsm:w-full flex-shrink-0 shadow-md bg-[#FCFDFF]'></div>
             </div>
         </div>
 
@@ -99,7 +99,7 @@ export default function Home() {
 
 
       {/* OUR PROJECTS ======================================================= */}
-      <section className='w-full h-auto flex flex-col items-center pt-[180px]'>
+      <section className='w-full h-auto flex flex-col items-center pt-[180px] nsTsm:pt-[120px]'>
         <div className='frame-container flex flex-col items-center gap-[80px]'>
 
         <div className='flex flex-col items-center'>
@@ -150,7 +150,7 @@ export default function Home() {
 
 
       {/* CONTACT ============================================================ */}
-      <section className='w-full h-auto flex flex-col items-center pt-[220px] pb-[140px]'>
+      <section className='w-full h-auto flex flex-col items-center pt-[220px] pb-[140px] nsTsm:pt-[120px] nsTsm:pb-[60px]'>
       <div className='frame-container flex flex-col items-center '>
 
               <ContactContainer/>

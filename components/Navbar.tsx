@@ -87,7 +87,7 @@ const Navbar = () => {
         setEmojiAnime('😉');
       }else if(emojiAnime === '😉'){
         setEmojiAnime('😎');
-      }else{
+      }else if(emojiAnime === '😎'){
         setEmojiAnime('🙂');
       }
 

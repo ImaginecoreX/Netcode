@@ -12,23 +12,23 @@ const ContactContainer = () => {
       {/* Column 1 */}
       <div className='w-fit nsTsm:flex nsTsm:flex-col nsTsm:items-center sm:flex sm:flex-col sm:items-center md:items-center lg:items-start xl:items-start 2xl:items-start'>
         <div className='nsTsm:pb-[80px] md:pb-[80px]'>
-          <div><div className='text-[38px] font-normal nsTsm:text-center md:text-center'>Contact</div></div>
-          <div><div className='text-[64px] font-medium nsTsm:text-center md:text-center'>Let’s Connect</div></div>
-          <div className='nsTsm:w-full nsTsm:flex nsTsm:flex-col nsTsm:items-center md:flex-col md:flex md:items-center'><div className='text-[26px] font-normal leading-[38px] w-[60%] nsTsm:w-[80%] nsTsm:text-center md:w-[80%] md:text-center'>Drop your queries and we will get back
+          <div><div className='text-[38px] font-normal nsTsm:text-center mdup:text-center'>Contact</div></div>
+          <div><div className='text-[64px] font-medium nsTsm:text-center mdup:text-center'>Let’s Connect</div></div>
+          <div className='nsTsm:w-full nsTsm:flex nsTsm:flex-col nsTsm:items-center mdup:flex-col mdup:flex mdup:items-center'><div className='text-[26px] font-normal leading-[38px] w-[60%] nsTsm:w-[80%] nsTsm:text-center mdup:w-[80%] mdup:text-center'>Drop your queries and we will get back
             to you as soon possible...</div></div>
         </div>
 
-        <div className='mt-[60px] nsTsm:hidden md:hidden'>
+        <div className='mt-[60px] nsTsm:hidden mdup:hidden'>
           <div><div className='text-[30px] font-medium'>Send us an email:</div></div>
           <div><div className='text-[20px] font-medium text-[#0780FF]'>teams.netcode@gmail.com</div></div>
         </div>
 
-        <div className='mt-[48px] nsTsm:hidden md:hidden'>
+        <div className='mt-[48px] nsTsm:hidden mdup:hidden'>
           <div><div className='text-[30px] font-medium'>Contact us:</div></div>
           <div><div className='text-[20px] font-medium text-[#0780FF]'>+94 74 3837 327</div></div>
         </div>
 
-        <div className='flex items-center gap-[30px] mt-[60px] nsTsm:hidden md:hidden'>
+        <div className='flex items-center gap-[30px] mt-[60px] nsTsm:hidden mdup:hidden'>
           <div className='p-[17px] bg-black rounded-full BTNShadow w-fit flex items-center justify-center flex-shrink-0'><Image src={github} alt='GitHub' className='w-[26px] h-[26px] flex-shrink-0' /></div>
           <div className='p-[17px] bg-black rounded-full BTNShadow w-fit flex items-center justify-center flex-shrink-0'><Image src={x} alt='X' className='w-[26px] h-[26px] flex-shrink-0' /></div>
           <div className='p-[17px] bg-black rounded-full BTNShadow w-fit flex items-center justify-center flex-shrink-0'><Image src={instagram} alt='Instagram' className='w-[26px] h-[26px] flex-shrink-0' /></div>

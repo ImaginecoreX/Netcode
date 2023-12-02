@@ -17,7 +17,7 @@ const config: Config = {
      
         'nsTsm': {'min':'359px', 'max': '767px'},
         // => @media (min-width: 359px) and (max-width: 767px) { ... }
-
+        'mdup': {'min': '768px', 'max': '1023px'},
         
       },
     },

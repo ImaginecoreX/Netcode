@@ -37,12 +37,12 @@ export default function Home() {
             <div className=''>
               
              <div className=''> <Chips colorCode='#00B2FF' title='About us' bg={true} /></div>
-              <div className='mt-[38px] w-[30%]'><div className='font-family-Lora text-[32px] italic font-medium'>At NetCode, we innovate, we create, we excel.</div></div>
-              <div className='mt-[14px] w-[50%]'><div className='text-[14px] font-normal leading-[24px]'>Welcome to the heart of our digital journey. We are NetCode, a passionate team of full-stack software engineers and IT enthusiasts who are dedicated to transforming ideas into extraordinary digital solutions. With a relentless pursuit of innovation and an unwavering commitment to excellence, we have established ourselves as a beacon of creativity and reliability in the world of technology.</div></div>
+              <div className='mt-[38px] w-[30%] nsTsm:w-[60%]'><div className='font-family-Lora text-[32px] italic font-medium'>At NetCode, we innovate, we create, we excel.</div></div>
+              <div className='mt-[14px] w-[50%] nsTsm:w-[90%]'><div className='text-[14px] font-normal leading-[24px]'>Welcome to the heart of our digital journey. We are NetCode, a passionate team of full-stack software engineers and IT enthusiasts who are dedicated to transforming ideas into extraordinary digital solutions. With a relentless pursuit of innovation and an unwavering commitment to excellence, we have established ourselves as a beacon of creativity and reliability in the world of technology.</div></div>
 
             </div>
 
-            <div className='absolute right-0 top-[70px]'>
+            <div className='absolute right-0 top-[70px] sm:hidden nsTsm:hidden md:hidden lg:block xl:block 2xl:block'>
               <div className='w-[432px] h-[540px] flex-shrink-0  shadow-md bg-[#FCFDFF]'></div>
             </div>
 
@@ -52,8 +52,8 @@ export default function Home() {
 
 
       {/* WHY CHOOSE US =======================================================*/}
-      <section className='w-full h-auto flex flex-col items-center pt-[200px]'>
-      <div className='frame-container flex items-center gap-[180px] justify-center'>
+      <section className='w-full h-auto flex flex-col items-center pt-[200px] nsTsm:pt-0 nsTsm:mt-[-60px]'>
+      <div className='frame-container flex items-center gap-[180px] nsTsm:gap-[120px] justify-center nsTsm:flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row'>
 
     {/* column 1 */}
         <div>
@@ -64,11 +64,11 @@ export default function Home() {
 
     {/* column 2 */}
         <div>
-        <div>
+        <div className='nsTsm:flex nsTsm:flex-col nsTsm:items-center'>
             
             <div><Chips bg={false} colorCode='#00B2FF' title='Why Choose Us'/></div>
-            <div className='mt-[12px]'><div className='text-[32px] font-medium'>Because we ensure every<br/> project we undertake is perfect</div></div>
-            <div className='pt-[14px]'><div className='text-[14px] leading-[24px]'>At NetCode, we uphold a commitment to perfection in every project we undertake. Our unwavering dedication ensures that each endeavor reflects the pinnacle of excellence, setting us apart in delivering unparalleled results. Choose confidence, choose distinction – choose NetCode.</div></div>
+            <div className='mt-[12px]'><div className='text-[32px] font-medium nsTsm:text-center'>Because we ensure every<br/> project we undertake is perfect</div></div>
+            <div className='pt-[14px] nsTsm:w-[84%]'><div className='text-[14px] leading-[24px] nsTsm:text-center'>At NetCode, we uphold a commitment to perfection in every project we undertake. Our unwavering dedication ensures that each endeavor reflects the pinnacle of excellence, setting us apart in delivering unparalleled results. Choose confidence, choose distinction – choose NetCode.</div></div>
 
         </div>
         </div>
@@ -79,7 +79,7 @@ export default function Home() {
 
 
       {/* SERVICES WE OFFER ================================================== */}
-      <section className='w-full h-auto flex flex-col items-center pt-[180px]'>
+      <section className='w-full h-auto flex flex-col items-center pt-[180px] nsTsm:pt-[120px]'>
       <div className='frame-container flex flex-col items-center gap-[80px]'>
 
         <div className='flex flex-col items-center'>
@@ -87,7 +87,7 @@ export default function Home() {
           <div className='pt-[15px]'><div className='text-[48px] font-semibold text-center'>Services we offer</div></div>
         </div>
 
-        <div className='grid grid-cols-2 gap-[24px]'>
+        <div className='grid lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-[24px] w-full md:grid-cols-1 sm:grid-cols-1 nsTsm:grid-cols-1'>
           {ServiceData.map((data, index)=>(
             <ServiceCard key={index} title={data.title} description={data.description} icon={data.icon} specialChar={data.specialChar}/>
           ))}
@@ -136,7 +136,7 @@ export default function Home() {
           <div className='pt-[15px]'><div className='text-[48px] font-semibold text-center'>Our Team</div></div>
         </div>
 
-        <div className='w-full grid grid-cols-4 pt-[80px] gap-[24px]'>
+        <div className='w-full grid  pt-[80px] gap-[24px] sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3  2xl:grid-cols-4 '>
 
             {MembersData.map((data, index)=>(
               <MemberCard key={index} data={data}/>

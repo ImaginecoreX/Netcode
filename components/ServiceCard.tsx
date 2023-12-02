@@ -25,7 +25,7 @@ const ServiceCard:React.FC<ServiceCardProps> = ({title, description, specialChar
 
         <div>
           <div><div className='text-[32px] font-semibold'>{title}</div></div>
-          <div className='mt-[16px]'><div className='w-[412px] text-[20px] max-h-[128px] overflow-hidden leading-[32px]'>{description}</div></div>
+          <div className='mt-[16px]'><div className='w-[412px] sm:w-[90%] h-auto md:h-auto md:w-[90%] text-[20px] max-h-[128px] overflow-hidden leading-[32px]'>{description}</div></div>
         </div>
 
     </div>

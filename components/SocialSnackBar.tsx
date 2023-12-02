@@ -9,7 +9,7 @@ import email from '@/public/email.svg';
 
 const SocialSnackBar = () => {
   return (
-  <div className='fixed top-1/2 left-0 transform -translate-y-1/2'>
+  <div className='fixed top-1/2 left-0 transform -translate-y-1/2 z-[100]'>
       <div className='w-[42px] bg-black h-auto rounded-r-[4px] py-[12px] '>
       <div className='flex flex-col items-center gap-[24px]'>
 

@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, { useEffect, useState } from 'react';
 import x from '@/public/member-twitter.svg';
 import github from '@/public/github.svg';
 import instagram from '@/public/instagram-black.svg';
@@ -10,13 +11,24 @@ interface MemberCardProps {
 }
 
 const MemberCard:React.FC<MemberCardProps> = ({data}) => {
+
+  const [memberImg, setMemberImg] = useState<any>();
+
+  useEffect(()=>{
+
+    if(data.img === 'nethmina'){
+      setMemberImg(nethmina);
+    }
+
+  },[data]);
+
   return (
     <div className='w-auto h-auto border-[1px] border-[#DDD] rounded-[4px] pt-[40px] pb-[60px] px-[36px] relative'>
 
         <div className='border-b-[1px] border-[#DDD] pb-[26px]'>
 
           <div className='flex flex-col items-center relative'>
-            <div className='w-[120px] h-[120px] border-[1px] border-[#DDD] relative'><Image src={data.img} alt={data.name} fill className='w-[120px] h-[120px] object-cover'/></div>
+            <div className='w-[120px] h-[120px] border-[1px] border-[#DDD] relative'><Image src={memberImg} alt={data.name} fill className='w-[120px] h-[120px] object-cover'/></div>
             <div className='w-[22px] h-[22px] border-[1px] border-[#DDD] absolute bottom-[-11px] bg-white'></div>
           </div>
 

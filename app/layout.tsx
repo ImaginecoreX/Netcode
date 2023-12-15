@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Roboto_Serif } from 'next/font/google'
 import './globals.css'
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const Serif = Roboto_Serif({ subsets: ['latin'] })
 
@@ -16,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={Serif.className}>{children}</body>
+      <body className={Serif.className}>
+        {children}
+        <SpeedInsights />
+        </body>
     </html>
   )
 }

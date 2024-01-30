@@ -4,41 +4,41 @@ import x from '@/public/member-twitter.svg';
 import github from '@/public/github.svg';
 import instagram from '@/public/instagram-black.svg';
 import Image from 'next/image';
-import nethmina from '@/public/nethmina.jpeg';
-import yasith from '@/public/yasith.jpeg';
-import menaka from '@/public/menaka.jpeg';
-import savindya from '@/public/savindya.jpeg';
-import gayuru from '@/public/gayuru.jpeg';
-import sahan from '@/public/sahan.jpeg';
-import noha from '@/public/noha.jpeg';
-import sasindu from '@/public/sasindu.jpeg';
 
+interface MemberData {
+  name: string;
+  img: string;
+  imgURL: string;
+  designation:string;
+  brief:string;
+  githubUrl:string;
+  xUrl:string;
+  instagramUrl:string;
+}
 interface MemberCardProps {
-  data: any
+  data: MemberData;
 }
 
 const MemberCard:React.FC<MemberCardProps> = ({data}) => {
 
-  const [memberImg, setMemberImg] = useState<any>();
+  const [memberImg, setMemberImg] = useState<string>('');
+  const [memberImgURL, setMemberImgURL] = useState<string>('');
+
+  const [isGitHub, setIsGitHub] = useState<boolean>(true);
+  const [isX, setIsX] = useState<boolean>(true);
+  const [isInstagram, setIsInstagram] = useState<boolean>(true);
 
   useEffect(()=>{
 
-    if(data.img === 'nethmina'){
-      setMemberImg(nethmina);
-    }else if(data.img === 'yasith'){
-      setMemberImg(yasith);
-    }else if(data.img === 'menaka'){
-      setMemberImg(menaka);
-    }else if(data.img === 'savindya'){
-      setMemberImg(savindya);
-    }else if(data.img === 'sahan'){
-      setMemberImg(sahan);
-    }else if(data.img === 'gayuru'){
-      setMemberImg(gayuru);
-    }else if(data.img === 'noha'){
-      setMemberImg(noha);
-    }else if(data.img === 'sasindu'){
-      setMemberImg(sasindu);
+    setMemberImg(data.img);
+    setMemberImgURL(data.imgURL);
+
+    if(data.githubUrl === "none"){
+      setIsGitHub(false);
+    }else if(data.xUrl === "none"){
+      setIsX(false);
+    }else if(data.instagramUrl === "none"){
+      setIsInstagram(false);
     }
 
   },[data]);
@@ -49,7 +49,7 @@ const MemberCard:React.FC<MemberCardProps> = ({data}) => {
         <div className='border-b-[1px] border-[#DDD] pb-[26px]'>
 
           <div className='flex flex-col items-center relative'>
-            <div className='w-[120px] h-[120px] border-[1px] border-[#DDD] relative'><Image src={memberImg} alt={data.name} fill className='w-[120px] h-[120px] object-cover'/></div>
+            <div className='w-[120px] h-[120px] border-[1px] border-[#DDD] relative'><Image src={memberImgURL} alt={memberImg} fill className='w-[120px] h-[120px] object-cover'/></div>
             <div className='w-[22px] h-[22px] border-[1px] border-[#DDD] absolute bottom-[-11px] bg-white'></div>
           </div>
 
@@ -65,9 +65,9 @@ const MemberCard:React.FC<MemberCardProps> = ({data}) => {
           <div className='pt-[24px]'><div className='text-[15px] font-normal text-center text-black opacity-60 leading-[30px]'>{data.brief}</div></div>
 
           <div className='flex items-center gap-[30px] mt-[50px]'>
-              <a href={data.githubUrl}><div><Image src={github} alt='GitHub' className='w-[24px] h-[24px]'/></div></a>
-              <a href={data.xUrl}><div><Image src={x} alt='X' className='w-[24px] h-[24px]'/></div></a>
-              <a href={data.instagramUrl}><div><Image src={instagram} alt='Instagram' className='w-[24px] h-[24px]'/></div></a>
+              {isGitHub?<a href={data.githubUrl}><div><Image src={github} alt='GitHub' className='w-[24px] h-[24px]'/></div></a>:""}
+             {isX? <a href={data.xUrl}><div><Image src={x} alt='X' className='w-[24px] h-[24px]'/></div></a>:""}
+              {isInstagram?<a href={data.instagramUrl}><div><Image src={instagram} alt='Instagram' className='w-[24px] h-[24px]'/></div></a>:""}
           </div>
 
         </div>

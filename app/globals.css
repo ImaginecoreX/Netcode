@@ -28,6 +28,10 @@
 .font-family-Lora {font-family: 'Lora', serif;}
 .font-family-Roboto {font-family: 'Roboto', sans-serif;}
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--theme);

@@ -22,7 +22,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 type Anchor = 'top' ;
 
-const Navbar = () => {
+interface NavbarProps{
+  currentSection: string;
+}
+
+const Navbar = ({currentSection}:NavbarProps) => {
+
+  const [position, setPosition] = useState('');
+  useEffect(()=>{
+    setPosition(currentSection);
+  },[currentSection])
 
   const [state, setState] = React.useState({
     top: false,
@@ -99,6 +108,17 @@ const Navbar = () => {
 
   // text-[#005DA7]
 
+
+  const scrollToSection = (sectionId: string)=>{
+    const section = document.getElementById(sectionId);
+    if(section){
+      section.scrollIntoView({
+        behavior:"smooth",
+        block: 'start',
+      });
+    }
+  }
+
   return (
     <div className='w-full flex flex-col items-center py-[28px] fixed top-0 backdrop-blur-lg z-50 bg-[#FFFFFF99]'>
       <div className='flex frame-container w-full justify-between items-center'>
@@ -128,12 +148,12 @@ const Navbar = () => {
         <div className='flex items-center gap-[30px] nsTsm:hidden'>
 
           <div className='flex items-center gap-[22px]'>
-            <div className='pb-[5px] border-b-[3px] border-[#0085FF]'><div className='text-[18px] font-medium'>Home</div></div>
-            <div className=''><div className='text-[18px]'>About</div></div>
-            <div className=''><div className='text-[18px]'>Services</div></div>
-            <div className=''><div className='text-[18px]'>Portfolio</div></div>
-            <div className=''><div className='text-[18px]'>Team</div></div>
-            <div className=''><div className='text-[18px]'>Contact</div></div>
+            <div className={position==='home'?"pb-[5px] border-b-[3px] border-[#0085FF] font-medium":""}><div className='text-[18px] '><a href="#home" onClick={()=>scrollToSection('home')}>Home</a></div></div>
+            <div className={position === 'about' ?"pb-[5px] border-b-[3px] border-[#0085FF] font-medium":""} ><div className='text-[18px]'><a href="#about" onClick={()=>scrollToSection('about')}>About</a></div></div>
+            <div className={position === 'services' ?"pb-[5px] border-b-[3px] border-[#0085FF] font-medium":""}><div className='text-[18px]'><a href="#services" onClick={()=>scrollToSection('services')}>Services</a></div></div>
+            <div className={position === 'portfolio' ?"pb-[5px] border-b-[3px] border-[#0085FF] font-medium":""}><div className='text-[18px]'><a href="#portfolio" onClick={()=>scrollToSection('portfolio')}>Portfolio</a></div></div>
+            <div className={position === 'team' ?"pb-[5px] border-b-[3px] border-[#0085FF] font-medium":""}><div className='text-[18px]'><a href="#team" onClick={()=>scrollToSection('team')}>Team</a></div></div>
+            <div className={position === 'contact' ?"pb-[5px] border-b-[3px] border-[#0085FF] font-medium":""}><div className='text-[18px]'><a href="#contact" onClick={()=>scrollToSection('contact')}>Contact</a></div></div>
             <div className=''><div className='text-[24px]'>{emojiAnime}</div></div>
           </div>
           {/* <div className='bg-black w-[55px] h-[32px] rounded-full flex items-center box-border px-[8px]' ><Image src={lightMode} alt='Theme' className='w-[18px] h-[18px]' /></div> */}

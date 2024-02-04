@@ -1,3 +1,4 @@
+"use client"
 import Chips from '@/components/Chips';
 import ServiceCard from '@/components/ServiceCard';
 import SocialSnackBar from '@/components/SocialSnackBar';
@@ -13,15 +14,75 @@ import VerticleSlide from '@/components/VerticleSlide';
 import ProjectCardData from '@/data/ProjectData.json';
 import futureKidImg from '@/public/explore_img1.jpg';
 import kidPlayingImg from '@/public/explore_img2.jpg';
+import { useEffect, useRef, useState } from 'react';
+
+// swipper
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import '@/app/css/slider.css';
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 export default function Home() {
+
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(()=>{
+    const handleScroll = ()=>{
+      const scrollPosition = window.scrollY;
+
+      // Define positions of each section
+      const sectionPositions = {
+        home: document.getElementById("home")?.offsetTop || 0,
+        about: document.getElementById("about")?.offsetTop || 0,
+        services: document.getElementById("services")?.offsetTop || 0,
+        portfolio: document.getElementById("portfolio")?.offsetTop || 0,
+        team: document.getElementById("team")?.offsetTop || 0,
+        contact: document.getElementById("contact")?.offsetTop || 0,
+      };
+
+      // determine the active section based on scroll position
+      let newActiveSection = '';
+      Object.entries(sectionPositions).forEach(([section, position])=>{
+        if(scrollPosition >= position){
+          newActiveSection = section
+        }
+      });
+
+      // update activesection state
+      setActiveSection(newActiveSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return ()=>{
+      window.removeEventListener('scroll', handleScroll);
+    };
+
+  },[])
+
+
+  
+  const progressCircle = useRef<SVGAElement | null>(null);
+  const progressContent = useRef<HTMLDivElement | null>(null);
+  const onAutoplayTimeLeft = (s:any, time:any, progress:any) => {
+    progressCircle.current.style.setProperty('--progress', 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
+
   return (
     <main className="min-h-screen w-full flex flex-col items-center overflow-hidden">
-      <Navbar/>
+      <Navbar currentSection={activeSection}/>
       <SocialSnackBar/>
 
       {/* HERO =============================================================== */}
-        <section className='w-full flex justify-center items-center min-h-screen'>
+        <section className='w-full flex justify-center items-center min-h-screen' id='home'>
           <div className='frame-container flex flex-col items-center justify-center'>
 
               <div className='w-[80%]'><div className='text-center text-[64px] font-semibold leading-normal nsTsm:text-[48px] nsTsm:pt-[100px]'>Let’s Build Your Software Journey Right Now!</div></div>
@@ -35,7 +96,7 @@ export default function Home() {
 
 
       {/* ABOUT US =========================================================== */}
-      <section className='flex flex-col items-center h-auto w-full bg-black text-white pt-[80px] pb-[100px]'>
+      <section id='about' className='flex flex-col items-center h-auto w-full bg-black text-white pt-[80px] pb-[100px]'>
       <div className='frame-container flex relative'>
 
             <div className=''>
@@ -56,7 +117,7 @@ export default function Home() {
 
 
       {/* WHY CHOOSE US =======================================================*/}
-      <section className='w-full h-auto flex flex-col items-center pt-[200px] nsTsm:pt-0 nsTsm:mt-[-60px]'>
+      <section id='whyChooseUs' className='w-full h-auto flex flex-col items-center pt-[200px] nsTsm:pt-0 nsTsm:mt-[-60px]'>
       <div className='frame-container flex items-center gap-[180px] nsTsm:gap-[120px] justify-center nsTsm:flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row'>
 
     {/* column 1 */}
@@ -83,7 +144,7 @@ export default function Home() {
 
 
       {/* SERVICES WE OFFER ================================================== */}
-      <section className='w-full h-auto flex flex-col items-center pt-[180px] nsTsm:pt-[120px]'>
+      <section id='services' className='w-full h-auto flex flex-col items-center pt-[180px] nsTsm:pt-[120px]'>
       <div className='frame-container flex flex-col items-center gap-[80px]'>
 
         <div className='flex flex-col items-center'>
@@ -103,7 +164,7 @@ export default function Home() {
 
 
       {/* OUR PROJECTS ======================================================= */}
-      <section className='w-full h-auto flex flex-col items-center pt-[180px] nsTsm:pt-[120px]'>
+      <section id='portfolio' className='w-full h-auto flex flex-col items-center pt-[180px] nsTsm:pt-[120px]'>
         <div className='frame-container flex flex-col items-center gap-[80px]'>
 
         <div className='flex flex-col items-center'>
@@ -113,24 +174,36 @@ export default function Home() {
 
         <div className='w-full flex flex-col items-center'>
   
-        {ProjectCardData.slice(0,1).map((project, index)=>(
-          <>
+        <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        onAutoplayTimeLeft={onAutoplayTimeLeft}
+        className="mySwiper"
+      >
+            {ProjectCardData.map((project, index)=>(
+          <SwiperSlide key={index}>
            <ProjectCard discription={project.discription} img={project.img} title={project.title} web={project.web} key={index}/>
-          </>
+           </SwiperSlide>
         ))}
-  
-          <div className='flex items-center gap-[10px] mt-[50px]'>
-            <div className='w-[10px] h-[10px] rounded-full bg-black'></div>
-            <div className='w-[10px] h-[10px] rounded-full bg-black opacity-[0.12]'></div>
-            <div className='w-[10px] h-[10px] rounded-full bg-black opacity-[0.12]'></div>
-            <div className='w-[10px] h-[10px] rounded-full bg-black opacity-[0.12]'></div>
-            <div className='w-[10px] h-[10px] rounded-full bg-black opacity-[0.12]'></div>
-            <div className='w-[10px] h-[10px] rounded-full bg-black opacity-[0.12]'></div>
-            <div className='w-[10px] h-[10px] rounded-full bg-black opacity-[0.12]'></div>
-            <div className='w-[10px] h-[10px] rounded-full bg-black opacity-[0.12]'></div>
-            <div className='w-[10px] h-[10px] rounded-full bg-black opacity-[0.12]'></div>
-            <div className='w-[10px] h-[10px] rounded-full bg-black opacity-[0.12]'></div>
-          </div>
+        <div className="autoplay-progress" slot="container-end">
+          <svg viewBox="0 0 48 48" ref={progressCircle}>
+            <circle cx="24" cy="24" r="20"></circle>
+          </svg>
+          <span ref={progressContent}></span>
+        </div>
+      </Swiper>
+   
+      
+          
         </div>
 
         </div>
@@ -138,7 +211,7 @@ export default function Home() {
       {/* OUR PROJECTS ======================================================= */}
 
       {/* OUR TEAM =========================================================== */}
-      <section className='w-full h-auto flex flex-col items-center pt-[180px]'>
+      <section id='team' className='w-full h-auto flex flex-col items-center pt-[180px]'>
       <div className='frame-container flex flex-col items-center '>
 
       <div className='flex flex-col items-center'>
@@ -160,7 +233,7 @@ export default function Home() {
 
 
       {/* CONTACT ============================================================ */}
-      <section className='w-full h-auto flex flex-col items-center pt-[220px] pb-[140px] nsTsm:pt-[120px] nsTsm:pb-[60px]'>
+      <section id='contact' className='w-full h-auto flex flex-col items-center pt-[220px] pb-[140px] nsTsm:pt-[120px] nsTsm:pb-[60px]'>
       <div className='frame-container flex flex-col items-center '>
 
               <ContactContainer/>

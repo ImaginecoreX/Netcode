@@ -1,37 +1,37 @@
 [
   {
     "title":"Web Development",
-    "description":"Empower your business online with our top-tier web development services. Precision in every line of code, excellence in every design element",
+    "description":"Elevate your online presence with precision in code, excellence in design. Let's craft your digital success! 💻✨",
     "specialChar":"W",
     "icon":"WebDevelopIcon"
   },
   {
     "title":"Mobile Applications",
-    "description":"Empower your business online with our top-tier web development services. Precision in every line of code, excellence in every design element",
+    "description":"Transform your business with our top-tier mobile app solutions. Excellence in every pixel. Let's make your app dreams a reality!📱✨",
     "specialChar":"M",
     "icon":"MobileDevelopIcon"
   },
   {
     "title":"Desktop Applications",
-    "description":"Empower your business online with our top-tier web development services. Precision in every line of code, excellence in every design element",
+    "description":"Enhance productivity with our desktop app solutions. Let's bring your vision to life! 🖥️✨",
     "specialChar":"D",
     "icon":"DesktopDevelopIcon"
   },
   {
     "title":"Custom Software",
-    "description":"Empower your business online with our top-tier web development services. Precision in every line of code, excellence in every design element",
+    "description":"Unlock tailored solutions with our custom software. Tailored to fit your needs! 💻✨ ",
     "specialChar":"C",
     "icon":"CustomDevelopIcon"
   },
   {
     "title":"Deployment",
-    "description":"Empower your business online with our top-tier web development services. Precision in every line of code, excellence in every design element",
+    "description":"Streamline deployment with our efficient solutions. Simplify your processes today! 🚀✨ ",
     "specialChar":"P",
     "icon":"DeploymentIcon"
   },
   {
-    "title":"SEO",
-    "description":"Empower your business online with our top-tier web development services. Precision in every line of code, excellence in every design element",
+    "title":"SEO Optimization",
+    "description":"Maximize visibility with our SEO optimization. Boost your online presence now! 🔍✨",
     "specialChar":"S",
     "icon":"SEOIcon"
   }

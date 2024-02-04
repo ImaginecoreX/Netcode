@@ -49,7 +49,7 @@ const MemberCard:React.FC<MemberCardProps> = ({data}) => {
         <div className='border-b-[1px] border-[#DDD] pb-[26px]'>
 
           <div className='flex flex-col items-center relative'>
-            <div className='w-[120px] h-[120px] border-[1px] border-[#DDD] relative'><Image src={memberImgURL} alt={memberImg} fill className='w-[120px] h-[120px] object-cover'/></div>
+            <div className='w-[120px] h-[120px] border-[1px] border-[#DDD] relative'><Image src={memberImgURL} alt={memberImg} fill loading='lazy' className='w-[120px] h-[120px] object-cover'/></div>
             <div className='w-[22px] h-[22px] border-[1px] border-[#DDD] absolute bottom-[-11px] bg-white'></div>
           </div>
 

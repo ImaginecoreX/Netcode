@@ -24,7 +24,7 @@ const ContactContainer = () => {
     email: email,
     subject: subject,
     msg: msg,
-    html:`<div>Hello ${fname}, Thank You For Reaching Us. We will get back to you as soon as posible.<br/> Thank You!</div>`
+    html:`<div>Hello I am ${fname}, ${msg}</div>`
   }
 
   const submitForm = async () => {
@@ -33,7 +33,7 @@ const ContactContainer = () => {
       .post("http://localhost:3000/api/send-email", formData)
       .then((res) => {
         setResponseData(res.data);
-        if (responseData.status === "success") {
+        if (res.data.msg === "success") {
           setFname('');
           setLname('');
           setEmail('');
@@ -41,6 +41,7 @@ const ContactContainer = () => {
           setMsg('');
           window.location.reload();
         }
+      
       })
       .catch((err) => {
         console.log(err);

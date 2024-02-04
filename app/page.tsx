@@ -69,12 +69,7 @@ export default function Home() {
 
 
   
-  const progressCircle = useRef<SVGAElement | null>(null);
-  const progressContent = useRef<HTMLDivElement | null>(null);
-  const onAutoplayTimeLeft = (s:any, time:any, progress:any) => {
-    progressCircle.current.style.setProperty('--progress', 1 - progress);
-    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-  };
+
 
   return (
     <main className="min-h-screen w-full flex flex-col items-center overflow-hidden">
@@ -184,22 +179,14 @@ export default function Home() {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper"
+      
       >
             {ProjectCardData.map((project, index)=>(
           <SwiperSlide key={index}>
            <ProjectCard discription={project.discription} img={project.img} title={project.title} web={project.web} key={index}/>
            </SwiperSlide>
         ))}
-        <div className="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 48 48" ref={progressCircle}>
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-          <span ref={progressContent}></span>
-        </div>
+       
       </Swiper>
    
       

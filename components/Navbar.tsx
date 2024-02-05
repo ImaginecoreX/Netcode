@@ -60,7 +60,7 @@ const Navbar = ({currentSection}:NavbarProps) => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Home', 'About', 'Services', 'Portfolio', 'Team','Contact'].map((text, index) => (
+        {['Home', 'About', 'Services', 'Portfolio','Case Study', 'Team','Contact'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -152,6 +152,7 @@ const Navbar = ({currentSection}:NavbarProps) => {
             <div className={position === 'about' ?"pb-[5px] border-b-[3px] border-[#0085FF] font-medium":""} ><div className='text-[18px]'><a href="#about" onClick={()=>scrollToSection('about')}>About</a></div></div>
             <div className={position === 'services' ?"pb-[5px] border-b-[3px] border-[#0085FF] font-medium":""}><div className='text-[18px]'><a href="#services" onClick={()=>scrollToSection('services')}>Services</a></div></div>
             <div className={position === 'portfolio' ?"pb-[5px] border-b-[3px] border-[#0085FF] font-medium":""}><div className='text-[18px]'><a href="#portfolio" onClick={()=>scrollToSection('portfolio')}>Portfolio</a></div></div>
+            <div className={position === 'casestudy' ?"pb-[5px] border-b-[3px] border-[#0085FF] font-medium":""}><div className='text-[18px]'><a href="#casestudy" onClick={()=>scrollToSection('casestudy')}>Case Study</a></div></div>
             <div className={position === 'team' ?"pb-[5px] border-b-[3px] border-[#0085FF] font-medium":""}><div className='text-[18px]'><a href="#team" onClick={()=>scrollToSection('team')}>Team</a></div></div>
             <div className={position === 'contact' ?"pb-[5px] border-b-[3px] border-[#0085FF] font-medium":""}><div className='text-[18px]'><a href="#contact" onClick={()=>scrollToSection('contact')}>Contact</a></div></div>
             <div className=''><div className='text-[24px]'>{emojiAnime}</div></div>

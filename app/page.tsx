@@ -28,6 +28,8 @@ import '@/app/css/slider.css';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import CaseStudyCard from '@/components/CaseStudyCard';
+import { AllCaseStudies } from '@/utils/CaseStudies';
 
 export default function Home() {
 
@@ -43,6 +45,7 @@ export default function Home() {
         about: document.getElementById("about")?.offsetTop || 0,
         services: document.getElementById("services")?.offsetTop || 0,
         portfolio: document.getElementById("portfolio")?.offsetTop || 0,
+        casestudy: document.getElementById("casestudy")?.offsetTop || 0,
         team: document.getElementById("team")?.offsetTop || 0,
         contact: document.getElementById("contact")?.offsetTop || 0,
       };
@@ -196,6 +199,29 @@ export default function Home() {
         </div>
       </section>
       {/* OUR PROJECTS ======================================================= */}
+
+
+      {/* OUR CASESTUDIES ======================================================= */}
+      <section id='casestudy' className='w-full h-auto flex flex-col items-center pt-[180px] nsTsm:pt-[120px]'>
+        <div className='frame-container flex flex-col items-center gap-[80px]'>
+
+        <div className='flex flex-col items-center'>
+          <div><Chips title='Case Study' colorCode='#00B2FF' bg={false}/></div>
+          <div className='pt-[15px]'><div className='text-[48px] font-semibold text-center'>Case Studies</div></div>
+        </div>
+
+        <div className='w-full flex flex-col items-center'>
+  
+              {AllCaseStudies.map((data, index)=>(
+                 <CaseStudyCard key={index} data={data}/>
+              ))}
+          
+        </div>
+
+        </div>
+      </section>
+      {/* OUR CASESTUDIES ======================================================= */}
+
 
       {/* OUR TEAM =========================================================== */}
       <section id='team' className='w-full h-auto flex flex-col items-center pt-[180px]'>

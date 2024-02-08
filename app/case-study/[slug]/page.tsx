@@ -46,7 +46,11 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
         <div className='mt-[60px] flex gap-[24px]'>
           {/* sidebar */}
           <div className='w-1/6 h-[200px] border '>
-
+            {AllCaseStudies?.map((data , index)=>(
+              <div className='' key={index}>
+                  <div>{data.bp[index].title}</div>
+              </div>
+            ))}
           </div>
 
           {/* datablock */}

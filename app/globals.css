@@ -111,3 +111,21 @@ body {
     width: 1728px;
   }
 }
+
+/* For WebKit browsers (including Safari) */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* For other browsers */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for older versions of Chrome and Safari */
+.hide-scrollbar {
+  overflow: -moz-scrollbars-none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

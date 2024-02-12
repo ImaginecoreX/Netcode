@@ -1,10 +1,12 @@
 "use client"
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Netcode from '@/public/netcode.svg';
 import { AllCaseStudies } from '@/utils/CaseStudies';
 import DiagramCard from '@/components/DiagramCard';
+import FullScreenImgView from '@/components/FullScreenImgView';
+import Footer from '@/components/Footer';
 
 
 const CaseStudy = ({ params }: { params: { slug: string } }) => {
@@ -12,6 +14,7 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
   const id = params;
   const route = useRouter();
   const back = () => route.back();
+
 
   const [study, setStudy] = useState<CaseStudyCardProps | any>();
   useEffect(() => {
@@ -22,8 +25,54 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
     }
   }, [params]);
 
+  const [isFullImage, setIsFullImage] = useState(false);
+  const [img, setImg] = useState<imgObjProps>();
+  useEffect(()=>{
+    if(img){
+      setIsFullImage(true);
+    }
+  },[img]);
+
+
+  const [activeSection, setActiveSection] = useState('');
+  const sidebarRefs = useRef<Record<string, HTMLDivElement | null>>({});
+    // Scroll event listener to determine the active section
+    useEffect(() => {
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        const sectionIds = AllCaseStudies[0].bp.map(data => data.id.toString());
+  
+        for (const id of sectionIds) {
+          const element = sidebarRefs.current[id];
+          if (element) {
+            const offsetTop = element.offsetTop;
+            const offsetBottom = offsetTop + element.clientHeight;
+            if (scrollPosition >= offsetTop && scrollPosition <= offsetBottom) {
+              setActiveSection(id);
+              break;
+            }
+          }
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToSection = (sectionId: string)=>{
+      const section = document.getElementById(sectionId);
+      if(section){
+        section.scrollIntoView({
+          behavior:"smooth",
+          block: 'start',
+        });
+      }
+    }
+
   return (
-    <div className='flex flex-col items-center min-h-screen'>
+    <>
+    <div className={`flex flex-col items-center scroll-smooth min-h-screen relative ${isFullImage?'max-h-screen overflow-hidden':''} `} style={{scrollBehavior:'smooth'}}>
+    {isFullImage && <FullScreenImgView data={img?.dataObj} setVisible={setIsFullImage} />}
       <div className='frame-container '>
 
         <div className='w-full flex items-center justify-between bg-white mt-[28px]'>
@@ -38,27 +87,29 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
           </div>
         </div>
       </div>
-      <div className='bg-black w-full mt-[30px] min-h-[100px] flex justify-center items-center nsTsm:h-auto'>
+
+      <div className='bg-black w-full mt-[30px] min-h-[100px] flex justify-center items-center nsTsm:h-auto nsTsm:py-[20px]'>
         <div className='text-white text-center text-[1.4rem] font-medium nsTsm:w-[80%]'>{study?.title}</div>
       </div>
+      
       <div className='frame-container '>
 
         {/* details */}
-        <div className='mt-[60px] flex gap-[24px] nsTsm:flex-col'>
+        <div className='mt-[60px] nsTsm:mt-[30px] flex gap-[24px] nsTsm:flex-col'>
           {/* sidebar */}
-          <div className='w-1/6 min-h-[200px] h-auto nsTsm:hidden  box-border px-[12px] py-[20px] gap-[24px] flex flex-col '>
-            {AllCaseStudies[0].bp.map((data , index)=>(
-              <div className='' key={index}>
-                  <div className=''>{data.title}</div>
+          <div className='w-1/6 min-h-[200px] h-auto nsTsm:hidden  box-border px-[12px] py-[20px] gap-[24px] flex flex-col max-h-screen overflow-hidden overflow-y-auto hide-scrollbar'>
+            {AllCaseStudies[0].bp.map((data, index) => (
+              <div className={`${activeSection==data.id.toString()?'bg-black text-white':''}`} onClick={()=>scrollToSection(data.id.toString())} key={index} id={data.id.toString() } ref={ref => sidebarRefs.current[data.id.toString()] = ref}>
+                <div className=''><strong>{data.id}:</strong> {data.title}</div>
               </div>
             ))}
           </div>
 
           {/* datablock */}
-          <div className='w-5/6 nsTsm:w-full pb-[20px]'>
-            <div className='w-full min-h-[400px]'>
-              
-            <div className='mb-[30px]'>
+          <div className='w-5/6 nsTsm:w-full pb-[20px] max-h-screen overflow-hidden nsTsm:max-h-none overflow-y-auto hide-scrollbar'>
+            <div className='w-full min-h-[400px]' >
+
+              <div className='mb-[30px]'>
                 <div className='text-[2rem] font-bold'>Overview</div>
                 <div className='pt-[6px] leading-[26px]'>An University Project we have to do a industry visit at manufacturing company. With that we choose Tea industry, and we visited <strong>New Kandhagasthanna Tea Factory</strong>.</div>
               </div>
@@ -71,9 +122,11 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
                 <div className='pt-[6px] leading-[26px]'>Now Let's see Hand-Drawed Business Process Diagrams (BPDs) and How they illustrate a Full Analysis of the  <strong>New Kandhagasthanna Tea Factory</strong> Production Process</div>
               </div>
               <div className='mt-[30px] flex flex-col gap-[20px]'>
-              {AllCaseStudies[0].bp.map((data, index)=>(
-                <DiagramCard key={index} diagram={data.diagram} id={data.id} title={data.title} description={data.description}/>
-              ))}
+                {AllCaseStudies[0].bp.map((data, index) => (
+                  <div onClick={()=>setImg({id:data.id,dataObj:data})}>
+                    <DiagramCard key={index} diagram={data.diagram} id={data.id} title={data.title} description={data.description} />
+                  </div>
+                ))}
               </div>
 
 
@@ -85,6 +138,8 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
 
       </div>
     </div>
+    {!isFullImage && <Footer />}
+    </>
   )
 
 }

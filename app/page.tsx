@@ -30,6 +30,8 @@ import '@/app/css/slider.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import CaseStudyCard from '@/components/CaseStudyCard';
 import { AllCaseStudies } from '@/utils/CaseStudies';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { scaleIn } from '@/utils/motion';
 
 export default function Home() {
 
@@ -70,8 +72,19 @@ export default function Home() {
 
   },[])
 
+  const scrollRef = useRef<HTMLDivElement>(null);
 
+  const {scrollYProgress} = useScroll({
+    target: scrollRef,
+    offset: ["start end", "end start"],
+  });
   
+  const xTransform  = useTransform(
+    scrollYProgress,
+    [0, 0.1, 1],
+    [0, 0, 0]
+    );
+
 
 
   return (
@@ -80,7 +93,7 @@ export default function Home() {
       <SocialSnackBar/>
 
       {/* HERO =============================================================== */}
-        <section className='w-full flex justify-center items-center min-h-screen' id='home'>
+        <motion.section initial="hidden" animate="visible" variants={scaleIn(0.3)} className='w-full flex justify-center items-center min-h-screen' id='home'>
           <div className='frame-container flex flex-col items-center justify-center'>
 
               <div className='w-[80%]'><div className='text-center text-[64px] font-semibold leading-normal nsTsm:text-[48px] nsTsm:pt-[100px]'>Let’s Build Your Software Journey Right Now!</div></div>
@@ -89,12 +102,12 @@ export default function Home() {
               <div className='mt-[21px] nsTsm:pb-[40px]'><div className='font-family-Lora italic font-normal text-center text-[14px]'>let’s innovate the world together</div></div>
 
           </div>
-        </section>
+        </motion.section>
       {/* HERO =============================================================== */}
 
 
       {/* ABOUT US =========================================================== */}
-      <section id='about' className='flex flex-col items-center h-auto w-full bg-black text-white pt-[80px] pb-[100px]'>
+      <motion.section id='about' className='flex flex-col items-center h-auto w-full bg-black text-white pt-[80px] pb-[100px]'>
       <div className='frame-container flex relative'>
 
             <div className=''>
@@ -110,7 +123,7 @@ export default function Home() {
             </div>
 
       </div>
-      </section>
+      </motion.section>
       {/* ABOUT US =========================================================== */}
 
 

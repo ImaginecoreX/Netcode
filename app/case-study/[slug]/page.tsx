@@ -7,14 +7,15 @@ import { AllCaseStudies } from '@/utils/CaseStudies';
 import DiagramCard from '@/components/DiagramCard';
 import FullScreenImgView from '@/components/FullScreenImgView';
 import Footer from '@/components/Footer';
-
+import { motion } from 'framer-motion';
+import { scaleIn, slideInFromBottom, slideInFromRight, slideInFromTop } from '@/utils/motion';
 
 const CaseStudy = ({ params }: { params: { slug: string } }) => {
 
   const id = params;
   const route = useRouter();
   const back = () => route.back();
-
+  const navigateToHome = ()=>route.push('/',{scroll:true});
 
   const [study, setStudy] = useState<CaseStudyCardProps | any>();
   useEffect(() => {
@@ -73,11 +74,11 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
     <>
     <div className={`flex flex-col items-center scroll-smooth min-h-screen relative ${isFullImage?'max-h-screen overflow-hidden':''} `} style={{scrollBehavior:'smooth'}}>
     {isFullImage && <FullScreenImgView data={img?.dataObj} setVisible={setIsFullImage} />}
-      <div className='frame-container '>
+      <motion.div initial="hidden" animate="visible" variants={slideInFromTop(0.3)} className='frame-container '>
 
         <div className='w-full flex items-center justify-between bg-white mt-[28px]'>
           {/* column 1 */}
-          <div className='flex items-center gap-[12px]'>
+          <div className='flex items-center gap-[12px] hover:cursor-pointer' onClick={navigateToHome}>
             <div><Image src={Netcode} alt='Netcode' className='' /></div>
             <div className='text-[20px] font-medium text-black text-center'>Netcode</div>
           </div>
@@ -86,20 +87,20 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
             <div onClick={back} >Go Back</div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className='bg-black w-full mt-[30px] min-h-[100px] flex justify-center items-center nsTsm:h-auto nsTsm:py-[20px]'>
+      <motion.div initial="hidden" animate="visible" variants={slideInFromTop(0.2)} className='bg-black w-full mt-[30px] min-h-[100px] flex justify-center items-center nsTsm:h-auto nsTsm:py-[20px]'>
         <div className='text-white text-center text-[1.4rem] font-medium nsTsm:w-[80%]'>{study?.title}</div>
-      </div>
+      </motion.div>
       
-      <div className='frame-container '>
+      <motion.div initial="hidden" animate="visible" variants={slideInFromBottom(0.3)} className='frame-container '>
 
         {/* details */}
         <div className='mt-[60px] nsTsm:mt-[30px] flex gap-[24px] nsTsm:flex-col'>
           {/* sidebar */}
           <div className='w-1/6 min-h-[200px] h-auto nsTsm:hidden  box-border px-[12px] py-[20px] gap-[24px] flex flex-col max-h-screen overflow-hidden overflow-y-auto hide-scrollbar'>
             {AllCaseStudies[0].bp.map((data, index) => (
-              <div className={`${activeSection==data.id.toString()?'bg-black text-white':''}`} onClick={()=>scrollToSection(data.id.toString())} key={index} id={data.id.toString() } ref={ref => sidebarRefs.current[data.id.toString()] = ref}>
+              <div className={`${activeSection==data.id.toString()?'border-blue-500 box-border px-[6px] text-blue-500 py-[6px] border-l-[2px]':''}`} onClick={()=>scrollToSection(data.id.toString())} key={index} id={data.id.toString() } ref={ref => sidebarRefs.current[data.id.toString()] = ref}>
                 <div className=''><strong>{data.id}:</strong> {data.title}</div>
               </div>
             ))}
@@ -114,7 +115,7 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
                 <div className='pt-[6px] leading-[26px]'>An University Project we have to do a industry visit at manufacturing company. With that we choose Tea industry, and we visited <strong>New Kandhagasthanna Tea Factory</strong>.</div>
               </div>
 
-              <video src='' className='w-full h-full bg-black' />
+              <motion.video initial="hidden" animate="visible" variants={scaleIn(0.25)} src='' className='w-full h-full bg-black' />
 
               {/* Diagrams */}
               <div className='mt-[40px]'>
@@ -136,7 +137,7 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
         </div>
 
 
-      </div>
+      </motion.div>
     </div>
     {!isFullImage && <Footer />}
     </>

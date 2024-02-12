@@ -20,6 +20,9 @@ import TeamIcon from '@mui/icons-material/Groups';
 import ContactIcon from '@mui/icons-material/PermContactCalendar';
 import MenuIcon from '@mui/icons-material/Menu';
 
+import { motion } from 'framer-motion';
+import { slideInFromTop } from '@/utils/motion';
+
 type Anchor = 'top' ;
 
 interface NavbarProps{
@@ -120,7 +123,7 @@ const Navbar = ({currentSection}:NavbarProps) => {
   }
 
   return (
-    <div className='w-full flex flex-col items-center py-[28px] fixed top-0 backdrop-blur-lg z-50 bg-[#FFFFFF99]'>
+    <motion.div initial="hidden" animate="visible" variants={slideInFromTop(0.3)} className='w-full flex flex-col items-center py-[28px] fixed top-0 backdrop-blur-lg z-50 bg-[#FFFFFF99]'>
       <div className='flex frame-container w-full justify-between items-center'>
         {/* column 1 */}
         <div className='flex items-center gap-[12px]'>
@@ -161,7 +164,7 @@ const Navbar = ({currentSection}:NavbarProps) => {
 
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

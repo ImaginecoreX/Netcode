@@ -6,10 +6,12 @@ import instagram from '@/public/instagram.svg';
 import linkedin from '@/public/linkedin.svg';
 import whatsApp from '@/public/whatsapp.svg';
 import email from '@/public/email.svg';
+import { motion } from 'framer-motion';
+import { slideInFromLeft } from '@/utils/motion';
 
 const SocialSnackBar = () => {
   return (
-  <div className='fixed top-1/2 left-0 transform -translate-y-1/2 z-[100]'>
+  <motion.div initial="hidden" animate="visible" variants={slideInFromLeft(0.3)} className='fixed top-1/2 left-0 transform -translate-y-1/2 z-[100]'>
       <div className='w-[42px] bg-black h-auto rounded-r-[4px] py-[12px] '>
       <div className='flex flex-col items-center gap-[24px]'>
 
@@ -23,7 +25,7 @@ const SocialSnackBar = () => {
 
       </div>
     </div>
-  </div>
+  </motion.div>
   )
 }
 

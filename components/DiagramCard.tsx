@@ -22,7 +22,7 @@ const DiagramCard = ({diagram,id,title, description}:DiagramCardProps) => {
       id={`#${id.toString()}`}
     className='w-full min-h-[400px] bg-white border '>
      <div className='w-full h-[400px] relative'>
-     <Image src={diagram} alt={id.toString()} fill className='hover:cursor-zoom-in hover:object-cover '/>
+     <Image src={diagram} alt={title} fill className='hover:cursor-zoom-in hover:object-cover '/>
      </div>
      <div className='w-full bg-black box-border py-[16px] px-[16px]'>
         <div className='text-white'>{title}</div>

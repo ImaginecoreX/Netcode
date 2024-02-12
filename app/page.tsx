@@ -32,6 +32,7 @@ import CaseStudyCard from '@/components/CaseStudyCard';
 import { AllCaseStudies } from '@/utils/CaseStudies';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { scaleIn } from '@/utils/motion';
+import useScreenSize from '@/utils/useScreenSize';
 
 export default function Home() {
 
@@ -85,21 +86,23 @@ export default function Home() {
     [0, 0, 0]
     );
 
+  const screenSize = useScreenSize();
+
 
 
   return (
     <main className="min-h-screen w-full flex flex-col items-center overflow-hidden">
       <Navbar currentSection={activeSection}/>
-      <SocialSnackBar/>
+      {screenSize === 'nsTsm'?'':<SocialSnackBar/>}
 
       {/* HERO =============================================================== */}
         <motion.section initial="hidden" animate="visible" variants={scaleIn(0.3)} className='w-full flex justify-center items-center min-h-screen' id='home'>
-          <div className='frame-container flex flex-col items-center justify-center'>
+          <div className='frame-container flex flex-col items-center justify-center nsTsm:pb-[50px]'>
 
-              <div className='w-[80%]'><div className='text-center text-[64px] font-semibold leading-normal nsTsm:text-[48px] nsTsm:pt-[100px]'>Let’s Build Your Software Journey Right Now!</div></div>
-              <div className='pt-[30px]'><div className='font-family-Lora text-center italic text-[32px]'>Crafting Digital Excellence.</div></div>
-              <div className='mt-[48px]'><button className='bg-black text-white text-[24px] font-semibold text-center py-[20px] px-[70px]'>Contact us</button></div>
-              <div className='mt-[21px] nsTsm:pb-[40px]'><div className='font-family-Lora italic font-normal text-center text-[14px]'>let’s innovate the world together</div></div>
+              <div className='w-[80%]'><div className='text-center text-[64px] font-semibold leading-normal nsTsm:text-[32px] nsTsm:pt-[100px]'>Let’s Build Your Software Journey Right Now!</div></div>
+              <div className='pt-[30px]'><div className='font-family-Lora text-center italic text-[32px] nsTsm:text-[18px]'>Crafting Digital Excellence.</div></div>
+              <div className='mt-[48px] nsTsm:mt-[30px]'><button className='bg-black text-white text-[24px] font-semibold text-center py-[20px] px-[70px] nsTsm:text-[1.2rem] nsTsm:py-[16px] nsTsm:px-[50px]'>Contact us</button></div>
+              <div className='mt-[21px] nsTsm:pb-[40px]'><div className='font-family-Lora italic font-normal text-center text-[14px] nsTsm:text-[10px]'>let’s innovate the world together</div></div>
 
           </div>
         </motion.section>
@@ -143,7 +146,7 @@ export default function Home() {
         <div className='nsTsm:flex nsTsm:flex-col nsTsm:items-center'>
             
             <div><Chips bg={false} colorCode='#00B2FF' title='Why Choose Us'/></div>
-            <div className='mt-[12px]'><div className='text-[32px] font-medium nsTsm:text-center'>Because we ensure every<br/> project we undertake is perfect</div></div>
+            <div className='mt-[12px]'><div className='text-[32px] font-medium nsTsm:text-center nsTsm:text-[26px]'>Because we ensure every project we undertake is perfect</div></div>
             <div className='pt-[14px] nsTsm:w-[84%]'><div className='text-[14px] leading-[24px] nsTsm:text-center'>At NetCode, we uphold a commitment to perfection in every project we undertake. Our unwavering dedication ensures that each endeavor reflects the pinnacle of excellence, setting us apart in delivering unparalleled results. Choose confidence, choose distinction – choose NetCode.</div></div>
 
         </div>
@@ -156,11 +159,11 @@ export default function Home() {
 
       {/* SERVICES WE OFFER ================================================== */}
       <section id='services' className='w-full h-auto flex flex-col items-center pt-[180px] nsTsm:pt-[120px]'>
-      <div className='frame-container flex flex-col items-center gap-[80px]'>
+      <div className='frame-container flex flex-col items-center gap-[80px] nsTsm:gap-[50px]'>
 
         <div className='flex flex-col items-center'>
           <div><Chips title='Services' colorCode='#00B2FF' bg={false}/></div>
-          <div className='pt-[15px]'><div className='text-[48px] font-semibold text-center'>Services we offer</div></div>
+          <div className='pt-[15px]'><div className='text-[48px] font-semibold text-center nsTsm:text-[32px]'>Services we offer</div></div>
         </div>
 
         <div className='grid lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-[24px] w-full md:grid-cols-1 sm:grid-cols-1 nsTsm:grid-cols-1'>
@@ -176,11 +179,11 @@ export default function Home() {
 
       {/* OUR PROJECTS ======================================================= */}
       <section id='portfolio' className='w-full h-auto flex flex-col items-center pt-[180px] nsTsm:pt-[120px]'>
-        <div className='frame-container flex flex-col items-center gap-[80px]'>
+        <div className='frame-container flex flex-col items-center gap-[80px] nsTsm:gap-[50px]'>
 
         <div className='flex flex-col items-center'>
           <div><Chips title='Portfolio' colorCode='#00B2FF' bg={false}/></div>
-          <div className='pt-[15px]'><div className='text-[48px] font-semibold text-center'>Explore Our Projects</div></div>
+          <div className='pt-[15px]'><div className='text-[48px] font-semibold text-center nsTsm:text-[32px]'>Explore Our Projects</div></div>
         </div>
 
         <div className='w-full flex flex-col items-center'>
@@ -216,11 +219,11 @@ export default function Home() {
 
       {/* OUR CASESTUDIES ======================================================= */}
       <section id='casestudy' className='w-full h-auto flex flex-col items-center pt-[180px] nsTsm:pt-[120px]'>
-        <div className='frame-container flex flex-col items-center gap-[80px]'>
+        <div className='frame-container flex flex-col items-center gap-[80px] nsTsm:gap-[50px]'>
 
         <div className='flex flex-col items-center'>
           <div><Chips title='Case Study' colorCode='#00B2FF' bg={false}/></div>
-          <div className='pt-[15px]'><div className='text-[48px] font-semibold text-center'>Case Studies</div></div>
+          <div className='pt-[15px]'><div className='text-[48px] font-semibold text-center nsTsm:text-[32px]'>Case Studies</div></div>
         </div>
 
         <div className='w-full flex flex-col items-center'>
@@ -242,10 +245,10 @@ export default function Home() {
 
       <div className='flex flex-col items-center'>
           <div><Chips title='Our Team' colorCode='#00B2FF' bg={false}/></div>
-          <div className='pt-[15px]'><div className='text-[48px] font-semibold text-center'>Our Team</div></div>
+          <div className='pt-[15px]'><div className='text-[48px] font-semibold text-center nsTsm:text-[32px]'>Our Team</div></div>
         </div>
 
-        <div className='w-full grid  pt-[80px] gap-[24px] sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3  2xl:grid-cols-4 '>
+        <div className='w-full grid  pt-[80px] nsTsm:pt-[50px] gap-[24px] sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3  2xl:grid-cols-4 '>
 
             {MembersData.map((data, index)=>(
               <MemberCard key={index} data={data}/>
@@ -259,7 +262,7 @@ export default function Home() {
 
 
       {/* CONTACT ============================================================ */}
-      <section id='contact' className='w-full h-auto flex flex-col items-center pt-[220px] pb-[140px] nsTsm:pt-[120px] nsTsm:pb-[60px]'>
+      <section id='contact' className='w-full h-auto flex flex-col items-center pt-[220px] pb-[140px] nsTsm:pt-[100px] nsTsm:pb-[60px]'>
       <div className='frame-container flex flex-col items-center '>
 
               <ContactContainer/>

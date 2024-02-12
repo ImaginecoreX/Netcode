@@ -64,7 +64,7 @@ const Navbar = ({currentSection}:NavbarProps) => {
     >
       <List>
         {['Home', 'About', 'Services', 'Portfolio','Case Study', 'Team','Contact'].map((text, index) => (
-          <ListItem key={text} disablePadding>
+          <ListItem key={text} disablePadding onClick={()=>scrollToSection(index==0?'home':index==1?"about":index==2?"services":index==3?"portfolio":index==4?"casestudy":index==5?"team":index==6?"contact":"")}>
             <ListItemButton>
               <ListItemIcon>
                 {index === 0 ? <HomeIcon/> :index === 1? <AboutIcon/> : index === 2 ? <ServiceIcon/> :index === 3 ? <PortfolioIcon/> : index === 4 ? <TeamIcon/> : <ContactIcon/>}

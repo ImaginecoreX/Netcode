@@ -107,7 +107,7 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
           </div>
 
           {/* datablock */}
-          <div className='w-5/6 nsTsm:w-full pb-[20px] max-h-screen overflow-hidden nsTsm:max-h-none overflow-y-auto hide-scrollbar'>
+          <div className='w-5/6 nsTsm:w-full pb-[20px] max-h-screen overflow-hidden nsTsm:max-h-none mdup:overflow-y-auto lg:overflow-y-auto xl:overflow-y-auto 2xl:overflow-y-auto   hide-scrollbar'>
             <div className='w-full min-h-[400px]' >
 
               <div className='mb-[30px]'>

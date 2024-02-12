@@ -28,7 +28,7 @@ const DiagramCard = ({diagram,id,title, description}:DiagramCardProps) => {
         <div className='text-white'>{title}</div>
         {description?<div className='text-white opacity-80 py-[6px]'>{description}</div>:''}
         <div>
-          <div className='text-white opacity-60'>BPD {id}</div>
+          <div className='text-white opacity-60'>BPD-{id}</div>
         </div>
      </div>
     </motion.div>

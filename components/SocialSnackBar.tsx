@@ -11,7 +11,7 @@ import { slideInFromLeft } from '@/utils/motion';
 
 const SocialSnackBar = () => {
   return (
-  <motion.div initial="hidden" animate="visible" variants={slideInFromLeft(0.3)} className='fixed top-1/2 left-0 transform -translate-y-1/2 z-[100]'>
+  <motion.div initial="hidden" animate="visible" variants={slideInFromLeft(0.3)} className='fixed top-1/3 left-0 transform -translate-y-1/2 z-[100]'>
       <div className='w-[42px] bg-black h-auto rounded-r-[4px] py-[12px] '>
       <div className='flex flex-col items-center gap-[24px]'>
 
@@ -29,4 +29,5 @@ const SocialSnackBar = () => {
   )
 }
 
-export default SocialSnackBar
+export default SocialSnackBar;
+

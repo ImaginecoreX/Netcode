@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import React, { useCallback, useEffect, useState } from 'react';
 import Netcode from '@/public/netcode.svg';
 import { AllCaseStudies } from '@/utils/CaseStudies';
+import DiagramCard from '@/components/DiagramCard';
 
 
 const CaseStudy = ({ params }: { params: { slug: string } }) => {
@@ -43,20 +44,39 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
       <div className='frame-container '>
 
         {/* details */}
-        <div className='mt-[60px] flex gap-[24px]'>
+        <div className='mt-[60px] flex gap-[24px] nsTsm:flex-col'>
           {/* sidebar */}
-          <div className='w-1/6 h-[200px] border '>
-            {AllCaseStudies?.map((data , index)=>(
+          <div className='w-1/6 min-h-[200px] h-auto nsTsm:hidden  box-border px-[12px] py-[20px] gap-[24px] flex flex-col '>
+            {AllCaseStudies[0].bp.map((data , index)=>(
               <div className='' key={index}>
-                  <div>{data.bp[index].title}</div>
+                  <div className=''>{data.title}</div>
               </div>
             ))}
           </div>
 
           {/* datablock */}
-          <div className='w-5/6'>
-            <div className='w-full h-[400px]'>
-              <video src='' className='w-full h-full bg-red-300' />
+          <div className='w-5/6 nsTsm:w-full pb-[20px]'>
+            <div className='w-full min-h-[400px]'>
+              
+            <div className='mb-[30px]'>
+                <div className='text-[2rem] font-bold'>Overview</div>
+                <div className='pt-[6px] leading-[26px]'>An University Project we have to do a industry visit at manufacturing company. With that we choose Tea industry, and we visited <strong>New Kandhagasthanna Tea Factory</strong>.</div>
+              </div>
+
+              <video src='' className='w-full h-full bg-black' />
+
+              {/* Diagrams */}
+              <div className='mt-[40px]'>
+                <div className='text-[2rem] font-bold'>Business Process Diagrams</div>
+                <div className='pt-[6px] leading-[26px]'>Now Let's see Hand-Drawed Business Process Diagrams (BPDs) and How they illustrate a Full Analysis of the  <strong>New Kandhagasthanna Tea Factory</strong> Production Process</div>
+              </div>
+              <div className='mt-[30px] flex flex-col gap-[20px]'>
+              {AllCaseStudies[0].bp.map((data, index)=>(
+                <DiagramCard key={index} diagram={data.diagram} id={data.id} title={data.title} description={data.description}/>
+              ))}
+              </div>
+
+
             </div>
           </div>
 

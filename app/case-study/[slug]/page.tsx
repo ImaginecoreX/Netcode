@@ -9,6 +9,8 @@ import FullScreenImgView from '@/components/FullScreenImgView';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { scaleIn, slideInFromBottom, slideInFromRight, slideInFromTop } from '@/utils/motion';
+import { ArrowUpward } from '@mui/icons-material';
+import useScreenSize from '@/utils/useScreenSize';
 
 const CaseStudy = ({ params }: { params: { slug: string } }) => {
 
@@ -70,11 +72,19 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
       }
     }
 
+    const screenSize = useScreenSize();
+
   return (
     <>
+    {/* go up */}
+    {!isFullImage &&  
+      <motion.div initial="hidden" animate="visible" variants={slideInFromBottom(0.6)} onClick={()=>scrollToSection(screenSize==='nsTsm'?'case-home':'overview')} className='w-[40px] h-[40px] flex hover:scale-90 transform transition-transform duration-300 cursor-pointer text-white justify-center items-center bg-black bottom-[30px] right-[30px] nsTsm:right-[16px] nsTsm:bottom-[24px] z-[500] rounded-full fixed'>
+        <ArrowUpward/>
+      </motion.div>
+      }
     <div className={`flex flex-col items-center scroll-smooth min-h-screen relative ${isFullImage?'max-h-screen overflow-hidden':''} `} style={{scrollBehavior:'smooth'}}>
     {isFullImage && <FullScreenImgView data={img?.dataObj} setVisible={setIsFullImage} />}
-      <motion.div initial="hidden" animate="visible" variants={slideInFromTop(0.3)} className='frame-container '>
+      <motion.div initial="hidden" animate="visible" variants={slideInFromTop(0.3)} className='frame-container ' id='case-home'>
 
         <div className='w-full flex items-center justify-between bg-white mt-[28px]'>
           {/* column 1 */}
@@ -110,7 +120,7 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
           <div className='w-5/6 nsTsm:w-full pb-[20px] max-h-screen overflow-hidden nsTsm:max-h-none mdup:overflow-y-auto lg:overflow-y-auto xl:overflow-y-auto 2xl:overflow-y-auto   hide-scrollbar'>
             <div className='w-full min-h-[400px]' >
 
-              <div className='mb-[30px]'>
+              <div className='mb-[30px]' id='overview'>
                 <div className='text-[2rem] font-bold'>Overview</div>
                 <div className='pt-[6px] leading-[26px]'>An University Project we have to do a industry visit at manufacturing company. With that we choose Tea industry, and we visited <strong>New Kandhagasthanna Tea Factory</strong>.</div>
               </div>

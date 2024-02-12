@@ -22,6 +22,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import { motion } from 'framer-motion';
 import { slideInFromTop } from '@/utils/motion';
+import { Book } from '@mui/icons-material';
 
 type Anchor = 'top' ;
 
@@ -62,12 +63,12 @@ const Navbar = ({currentSection}:NavbarProps) => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
+      <List className='bg-[#000000] backdrop-blur-sm text-white'>
         {['Home', 'About', 'Services', 'Portfolio','Case Study', 'Team','Contact'].map((text, index) => (
           <ListItem key={text} disablePadding onClick={()=>scrollToSection(index==0?'home':index==1?"about":index==2?"services":index==3?"portfolio":index==4?"casestudy":index==5?"team":index==6?"contact":"")}>
             <ListItemButton>
-              <ListItemIcon>
-                {index === 0 ? <HomeIcon/> :index === 1? <AboutIcon/> : index === 2 ? <ServiceIcon/> :index === 3 ? <PortfolioIcon/> : index === 4 ? <TeamIcon/> : <ContactIcon/>}
+              <ListItemIcon className='text-white'>
+                {index === 0 ? <HomeIcon/> :index === 1? <AboutIcon/> : index === 2 ? <ServiceIcon/> :index === 3 ? <PortfolioIcon/> :index===4? <Book/>: index === 5 ? <TeamIcon/> : <ContactIcon/>}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>

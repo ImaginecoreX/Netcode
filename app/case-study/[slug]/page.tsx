@@ -11,15 +11,20 @@ import { motion } from 'framer-motion';
 import { scaleIn, slideInFromBottom, slideInFromRight, slideInFromTop } from '@/utils/motion';
 import { ArrowUpward } from '@mui/icons-material';
 import useScreenSize from '@/utils/useScreenSize';
+import { useInView } from 'react-intersection-observer';
 
 const CaseStudy = ({ params }: { params: { slug: string } }) => {
 
-  const id = params;
   const route = useRouter();
-  const back = () => route.back();
-  const navigateToHome = () => route.push('/', { scroll: true });
-
   const [study, setStudy] = useState<CaseStudyCardProps | any>();
+  const [isFullImage, setIsFullImage] = useState(false);
+  const [img, setImg] = useState<imgObjProps>();
+  const [activeSection, setActiveSection] = useState<string>('');
+  const screenSize = useScreenSize();
+  const [diagrmaID, setDiagrmaID] = useState<string>('');
+
+  const id = params;
+
   useEffect(() => {
     const foundStudy = AllCaseStudies.find(data => data.title === decodeURIComponent(id.slug));
     if (foundStudy) {
@@ -28,39 +33,13 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
     }
   }, [params]);
 
-  const [isFullImage, setIsFullImage] = useState(false);
-  const [img, setImg] = useState<imgObjProps>();
+
   useEffect(() => {
     if (img) {
       setIsFullImage(true);
     }
   }, [img]);
 
-
-  const [activeSection, setActiveSection] = useState('');
-  const sidebarRefs = useRef<Record<string, HTMLDivElement | null>>({});
-  // Scroll event listener to determine the active section
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const sectionIds = AllCaseStudies[0].bp.map(data => data.id.toString());
-
-      for (const id of sectionIds) {
-        const element = sidebarRefs.current[id];
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetBottom = offsetTop + element.clientHeight;
-          if (scrollPosition >= offsetTop && scrollPosition <= offsetBottom) {
-            setActiveSection(id);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -72,7 +51,13 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
     }
   }
 
-  const screenSize = useScreenSize();
+  const back = () => route.back();
+  const navigateToHome = () => route.push('/', { scroll: true });
+
+  const handleScroll = ()=>{
+    alert("scrolling...");
+  };
+
 
   return (
     <>
@@ -108,16 +93,16 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
           {/* details */}
           <div className='mt-[60px] nsTsm:mt-[30px] flex gap-[24px] nsTsm:flex-col'>
             {/* sidebar */}
-            <div className='w-1/6 min-h-[200px] h-auto nsTsm:hidden  box-border px-[12px] py-[20px] gap-[24px] flex flex-col max-h-screen overflow-hidden overflow-y-auto hide-scrollbar'>
+            <div className='w-1/6 min-h-[200px] h-auto nsTsm:hidden  box-border px-[12px] py-[20px] gap-[24px] flex flex-col max-h-screen overflow-hidden overflow-y-auto hide-scrollbar' >
               {AllCaseStudies[0].bp.map((data, index) => (
-                <div className={`${activeSection == data.id.toString() ? 'border-blue-500 box-border px-[6px] text-blue-500 py-[6px] border-l-[2px]' : ''}`} onClick={() => scrollToSection(data.id.toString())} key={index} id={data.id.toString()} ref={ref => sidebarRefs.current[data.id.toString()] = ref}>
+                <div className={`sidebar-text ${data.title === diagrmaID ? 'highlighted' : ''}`}  onClick={() => scrollToSection(data.id.toString())} key={index} id={data.title}>
                   <div className=''><strong>{data.id}:</strong> {data.title}</div>
                 </div>
               ))}
             </div>
 
             {/* datablock */}
-            <div className='w-5/6 nsTsm:w-full pb-[20px] max-h-screen overflow-hidden nsTsm:max-h-none mdup:overflow-y-auto lg:overflow-y-auto xl:overflow-y-auto 2xl:overflow-y-auto   hide-scrollbar'>
+            <div  className='w-5/6 nsTsm:w-full pb-[20px] max-h-screen overflow-hidden nsTsm:max-h-none mdup:overflow-y-auto lg:overflow-y-auto xl:overflow-y-auto 2xl:overflow-y-auto   hide-scrollbar' >
               <div className='w-full min-h-[400px]' >
 
                 <div className='mb-[30px]' id='overview'>
@@ -136,8 +121,8 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
                 </div>
                 <div className='mt-[30px] flex flex-col gap-[20px]'>
                   {AllCaseStudies[0].bp.map((data, index) => (
-                    <div onClick={() => setImg({ id: data.id, dataObj: data })}>
-                      <DiagramCard key={index} diagram={data.diagram} id={data.id} title={data.title} description={data.description} />
+                    <div onClick={() => setImg({ id: data.id, dataObj: data })} >
+                      <DiagramCard  key={index} diagram={data.diagram} id={data.id} title={data.title}  description={data.description} setID={setDiagrmaID}/>
                     </div>
                   ))}
                 </div>

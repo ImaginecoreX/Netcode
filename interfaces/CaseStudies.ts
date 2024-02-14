@@ -24,3 +24,10 @@ interface imgObjProps{
   id:number;
   dataObj:DiagramCardProps;
 }
+interface DiagramCardSetterProps{
+  id: number;
+  title:string;
+  description?:string;
+  diagram: string;
+  setID:Function;
+}

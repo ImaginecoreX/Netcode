@@ -3,7 +3,8 @@ export const AllCaseStudies = [
   {
     "id":1,
     "title":"Full Analysis of New Kandhagasthanna Tea Factory",
-    "description":"This Case Study illustrates full Business Process Analysis of Palmadulla Tea Factory. We conduct Interview with workers of factory and analysis every process in the factory and we shown it with Business Process Diagrams.",
+    "description":"As part of our university project, we embarked on an industry visit to explore the intricacies of the manufacturing process within the tea industry. Our chosen destination was the renowned New Kandhagasthanna Tea Factory, a prominent player in the tea manufacturing sector known for its commitment to quality and innovation.",
+    "img":"/CaseStudies/TeaFactoryStudy/cover.jpeg",
     "overview": {
       "video":"",
 
@@ -106,6 +107,114 @@ export const AllCaseStudies = [
         "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_16.jpeg"
       },
       {
+        "id": 17,
+        "title":"Laboratory Testing",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_17.jpeg"
+      },
+      {
+        "id": 18,
+        "title":"Training & Development",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_18.jpeg"
+      },
+      {
+        "id": 19,
+        "title":"Export & International Trade",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_19.jpeg"
+      },
+      {
+        "id": 20,
+        "title":"Innovation & continous Improvement Processess",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_20.jpeg"
+      },
+      {
+        "id": 21,
+        "title":"Tea Testing & Quality Evaluation Process",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_21.jpeg"
+      },
+      {
+        "id": 22,
+        "title":"Supplier Relationship Management (SRM)",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_22.jpeg"
+      },
+      {
+        "id": 23,
+        "title":"Inventory Control",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_23.jpeg"
+      },
+      {
+        "id": 24,
+        "title":"Tea State Management",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_24.jpeg"
+      },
+      {
+        "id": 25,
+        "title":"Energy Management",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_25.jpeg"
+      },
+      {
+        "id": 26,
+        "title":"Tea Auction",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_26.jpeg"
+      },
+      {
+        "id": 27,
+        "title":"Health & Wellness Program",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_27.jpeg"
+      },
+      {
+        "id": 28,
+        "title":"IT Infrastructure Management",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_28.jpeg"
+      },
+      {
+        "id": 29,
+        "title":"Tea Tourism",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_29.jpeg"
+      },
+      {
+        "id": 30,
+        "title":"Stakeholder Engagement",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_30.jpeg"
+      },
+      {
+        "id": 31,
+        "title":"Transprotation and logistics",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_31.jpeg"
+      },
+      {
+        "id": 32,
+        "title":"Customer feedback & satisfaction",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_32.jpeg"
+      },
+      {
+        "id": 33,
+        "title":"Tea Leaf Procurement",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_33.jpeg"
+      },
+      {
+        "id": 34,
+        "title":"Waste Management",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_34.jpeg"
+      },
+      {
         "id": 35,
         "title":"Product Recall & Crisis Management",
         "description":"",
@@ -142,6 +251,138 @@ export const AllCaseStudies = [
         "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_40.jpeg"
       },
       {
+        "id": 41,
+        "title":"Tea Packaging Designing & Innovation",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_41.jpeg"
+      },
+      {
+        "id": 42,
+        "title":"Tea Marketing & Branding",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_42.jpeg"
+      },
+      {
+        "id": 43,
+        "title":"Tea Production Efficiency Improvement",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_43.jpeg"
+      },
+      {
+        "id": 44,
+        "title":"Tea Export & International Market Expansion",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_44.jpeg"
+      },
+      {
+        "id": 45,
+        "title":"Product Planning",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_45.jpeg"
+      },
+      {
+        "id": 46,
+        "title":"Processing Equipment Maintenance",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_46.jpeg"
+      },
+      {
+        "id": 47,
+        "title":"Tea Quality Control",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_47.jpeg"
+      },
+      {
+        "id": 47,
+        "title":"Tea Quality Control",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_47.jpeg"
+      },
+      {
+        "id": 48,
+        "title":"Storage & Inventory Management",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_48.jpeg"
+      },
+      {
+        "id": 49,
+        "title":"Tea Bleding & Flavoring",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_49.jpeg"
+      },
+      {
+        "id": 50,
+        "title":"Waste Recycling & Sustainability",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_50.jpeg"
+      },
+      {
+        "id": 51,
+        "title":"Product Innovation",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_51.jpeg"
+      },
+      {
+        "id": 52,
+        "title":"Packaging Automation",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_52.jpeg"
+      },
+      {
+        "id": 53,
+        "title":"Traceability & Certification",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_53.jpeg"
+      },
+      {
+        "id": 54,
+        "title":"Production Yield Optimization",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_54.jpeg"
+      },
+      {
+        "id": 55,
+        "title":"Product Safety & Compliance",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_55.jpeg"
+      },
+      {
+        "id": 56,
+        "title":"Product Differentitaion ^& Brand Positioning",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_56.jpeg"
+      },
+      {
+        "id": 57,
+        "title":"Product Life Cycle Management",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_57.jpeg"
+      },
+      {
+        "id": 58,
+        "title":"Production Forecasting & Inventory Planning",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_58.jpeg"
+      },
+      {
+        "id": 59,
+        "title":"Product Line Extension",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_59.jpeg"
+      },
+      {
+        "id": 60,
+        "title":"Product Pricing & Revenue Management",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_60.jpeg"
+      },
+      {
+        "id": 61,
+        "title":"Distribution & Channel Management",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_61.jpeg"
+      },
+      {
         "id": 62,
         "title":"Packaging Sustainability",
         "description":"",
@@ -160,6 +401,114 @@ export const AllCaseStudies = [
         "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_64.jpeg"
       },
       {
+        "id": 65,
+        "title":"Innovation & Development",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_65.jpeg"
+      },
+      {
+        "id": 66,
+        "title":"Product Destribution Logistics",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_66.jpeg"
+      },
+      {
+        "id": 67,
+        "title":"Customer Service & Support",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_67.jpeg"
+      },
+      {
+        "id": 68,
+        "title":"Quality Assurance & Control",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_68.jpeg"
+      },
+      {
+        "id": 69,
+        "title":"Supply Chain Management",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_69.jpeg"
+      },
+      {
+        "id": 70,
+        "title":"Tea Product Packaging Design & Branding",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_70.jpeg"
+      },
+      {
+        "id": 71,
+        "title":"Tea Product Marketing & Promotion",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_71.jpeg"
+      },
+      {
+        "id": 72,
+        "title":"Innovation & New Product Development",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_72.jpeg"
+      },
+      {
+        "id": 73,
+        "title":"Tea Product Distribution & Logistics",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_73.jpeg"
+      },
+      {
+        "id": 74,
+        "title":"Tea Product Sales & Revenue Management",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_74.jpeg"
+      },
+      {
+        "id": 75,
+        "title":"Tea Product Customer Feedback & Satisfaction",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_75.jpeg"
+      },
+      {
+        "id": 76,
+        "title":"Product Brand Management",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_76.jpeg"
+      },
+      {
+        "id": 77,
+        "title":"Market Research & Analysis",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_77.jpeg"
+      },
+      {
+        "id": 78,
+        "title":"E-Commerce Operations",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_78.jpeg"
+      },
+      {
+        "id": 79,
+        "title":"International Expansion",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_79.jpeg"
+      },
+      {
+        "id": 80,
+        "title":"Crisis Management & Contingency Planning",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_80.jpeg"
+      },
+      {
+        "id": 81,
+        "title":"Digital Marketing & Social Media Management",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_81.jpeg"
+      },
+      {
+        "id": 82,
+        "title":"Sustainability & Coperate Social Responsibility (CSR)",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_82.jpeg"
+      },
+      {
         "id": 83,
         "title":"Product Research & Development",
         "description":"",
@@ -176,6 +525,96 @@ export const AllCaseStudies = [
         "title":"Distribution Channel Optimization",
         "description":"",
         "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_85.jpeg"
+      },
+      {
+        "id": 86,
+        "title":"Product Customer Relationship Management (CRM)",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_86.jpeg"
+      },
+      {
+        "id": 87,
+        "title":"Product Pricing Strategy & Optimization",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_87.jpeg"
+      },
+      {
+        "id": 88,
+        "title":"Sales Forecasting & Demand Planning",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_88.jpeg"
+      },
+      {
+        "id": 89,
+        "title":"Supplier Relationship Management",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_89.jpeg"
+      },
+      {
+        "id": 90,
+        "title":"Production Efficiency Improvement",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_90.jpeg"
+      },
+      {
+        "id": 91,
+        "title":"Quality Control Assurance",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_91.jpeg"
+      },
+      {
+        "id": 92,
+        "title":"Market Expansion Strategies",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_92.jpeg"
+      },
+      {
+        "id": 93,
+        "title":"Product Innovation & Research",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_93.jpeg"
+      },
+      {
+        "id": 94,
+        "title":"Branding & Posting",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_94.jpeg"
+      },
+      {
+        "id": 95,
+        "title":"Product Distribution Strategy & Channel",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_95.jpeg"
+      },
+      {
+        "id": 96,
+        "title":"Product Pricising Strategy & Positioning",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_96.jpeg"
+      },
+      {
+        "id": 97,
+        "title":"Packaging Designing & Innovation",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_97.jpeg"
+      },
+      {
+        "id": 98,
+        "title":"Marketing Campaign Planning & Execution",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_98.jpeg"
+      },
+      {
+        "id": 99,
+        "title":"Customer Engagement & Retention",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_99.jpeg"
+      },
+      {
+        "id": 100,
+        "title":"Market Analysis & Competitive Intelligenece",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_100.jpeg"
       },
       {
         "id": 101,
@@ -248,6 +687,114 @@ export const AllCaseStudies = [
         "title":"Product Digital Transformation & Innovation Processes",
         "description":"",
         "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_112.jpeg"
+      },
+      {
+        "id": 113,
+        "title":"Product Employee Health & Wellness Programs",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_113.jpeg"
+      },
+      {
+        "id": 114,
+        "title":"Product Digital Marketing & Social Media Strategies",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_114.jpeg"
+      },
+      {
+        "id": 115,
+        "title":"Data Analytics & Insights Processes",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_115.jpeg"
+      },
+      {
+        "id": 116,
+        "title":"Product Crisis Management & Response",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_116.jpeg"
+      },
+      {
+        "id": 117,
+        "title":"Product Ominichannel Retailing and Distribution",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_117.jpeg"
+      },
+      {
+        "id": 118,
+        "title":"Customer Feedback & Satisfation",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_118.jpeg"
+      },
+      {
+        "id": 119,
+        "title":"Product Strategic Patnerships & Alliances",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_119.jpeg"
+      },
+      {
+        "id": 120,
+        "title":"Product Marketing Communication & Advertising",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_120.jpeg"
+      },
+      {
+        "id": 121,
+        "title":"Supply Chain Optimization & Efficiency",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_121.jpeg"
+      },
+      {
+        "id": 122,
+        "title":"Product Packaging Sustainability & Eco-Friendly Initiatives",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_122.jpeg"
+      },
+      {
+        "id": 123,
+        "title":"Product Distribution Channel Management",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_123.jpeg"
+      },
+      {
+        "id": 124,
+        "title":"Pricing Strategy & Optimization",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_124.jpeg"
+      },
+      {
+        "id": 125,
+        "title":"Brand Strategy & Positioning",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_125.jpeg"
+      },
+      {
+        "id": 126,
+        "title":"Packaging Design & Innovation",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_126.jpeg"
+      },
+      {
+        "id": 127,
+        "title":"Product Market Research & Competitive Analysis",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_127.jpeg"
+      },
+      {
+        "id": 128,
+        "title":"Customer Engagement & Loyalty Programs",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_128.jpeg"
+      },
+      {
+        "id": 129,
+        "title":"Tea Product Food Safety & Quality Assurance",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_129.jpeg"
+      },
+      {
+        "id": 130,
+        "title":"Technology Innovation & Adoption",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_130.jpeg"
       },
       {
         "id": 131,

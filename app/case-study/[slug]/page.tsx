@@ -150,7 +150,7 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
 
                 
                 <div className="w-full h-[400px] nsTsm:h-[300px] 2xl:h-[600px] xl:h-[500px]">
-                  <motion.iframe initial="hidden" animate="visible" variants={scaleIn(0.25)} src="https://www.youtube.com/embed/LzQ0E-8MYic?rel=0" title="YouTube video" className='w-full h-full' allowFullScreen></motion.iframe>
+                  <motion.iframe initial="hidden" animate="visible" variants={scaleIn(0.25)} src="https://www.youtube.com/embed/ScZxd-Rom8M?rel=0" title="YouTube video" className='w-full h-full' allowFullScreen></motion.iframe>
                 </div>
                 {/* Diagrams */}
                 <div className='mt-[40px]'>

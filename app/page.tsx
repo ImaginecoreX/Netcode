@@ -34,6 +34,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { scaleIn, slideInFromBottom } from '@/utils/motion';
 import useScreenSize from '@/utils/useScreenSize';
 import { ArrowUpward } from '@mui/icons-material';
+import WhatsAppCard from '@/components/social/WhatsAppCard';
 
 export default function Home() {
 
@@ -118,15 +119,19 @@ export default function Home() {
     }
   },[activeSection]);
 
+  const [isSocialCard, setIsSocialCard] = useState(false);
+
 
   return (
-    <main className="min-h-screen w-full flex flex-col items-center overflow-hidden scroll-smooth">
+    <main className={`${isSocialCard ? 'max-h-screen overflow-hidden' : ''} min-h-screen w-full flex flex-col items-center overflow-hidden scroll-smooth`}>
       <Navbar currentSection={activeSection} />
-      {screenSize === 'nsTsm' ? '' : <SocialSnackBar />}
+      {screenSize === 'nsTsm' ? '' :isSocialCard?'': <SocialSnackBar setWA={setIsSocialCard}/>}
       {/* go up */}
       {upButton && <motion.div initial="hidden" animate="visible" variants={slideInFromBottom(0.6)} onClick={()=>scrollToSection('home')} className='w-[40px] h-[40px] flex hover:scale-90 transform transition-transform duration-300 cursor-pointer text-white justify-center items-center bg-black bottom-[30px] right-[30px] nsTsm:right-[16px] nsTsm:bottom-[24px] z-[1000] rounded-full fixed'>
         <ArrowUpward/>
       </motion.div>}
+
+      {isSocialCard && <WhatsAppCard setVisible={setIsSocialCard}/>}
 
       {/* HERO =============================================================== */}
       <motion.section initial="hidden" animate="visible" variants={scaleIn(0.3)} className='w-full flex justify-center items-center min-h-screen' id='home'>

@@ -2,6 +2,7 @@ interface DataProps{
   id: number;
   title: string;
   description: string;
+  img:string;
 }
 
 interface CaseStudyCardProps{
@@ -31,3 +32,4 @@ interface DiagramCardSetterProps{
   diagram: string;
   setID:Function;
 }
+

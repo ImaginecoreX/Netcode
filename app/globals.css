@@ -134,7 +134,7 @@ body {
   height: calc(9 / 16 * 100%);
 }
 
-.highlighted{
+.{
   border-left: 2px solid rgb(59 130 246);
   box-sizing: border-box;
   padding-left: 6px;

@@ -21,7 +21,7 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
   const [img, setImg] = useState<imgObjProps>();
   const [activeSection, setActiveSection] = useState<string>('');
   const screenSize = useScreenSize();
-  const [diagrmaID, setDiagrmaID] = useState<string>('');
+  
 
   const id = params;
 
@@ -58,6 +58,44 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
     alert("scrolling...");
   };
 
+ // Initialize your state
+ const [diagramID, setDiagramID] = useState('');
+
+ const [cardInMiddle, setCardInMiddle] = useState('');
+
+ const containerRef = useRef<HTMLDivElement>(null);
+
+ const checkIfMiddle = () => {
+   if (containerRef.current) {
+     const containerRect = containerRef.current.getBoundingClientRect();
+     const containerHeight = containerRect.height;
+     const containerTop = containerRect.top;
+     const containerBottom = containerTop + containerHeight;
+
+     // Loop through each card
+     const cards = containerRef.current.querySelectorAll('.DiagramCard');
+     cards.forEach(card => {
+       const cardRect = card.getBoundingClientRect();
+       const cardTop = cardRect.top;
+       const cardBottom = cardRect.bottom;
+
+       // Check if the middle of the card is within the container's viewport
+       if (cardTop >= containerTop && cardBottom <= containerBottom) {
+         setCardInMiddle(card.id); // Assuming each card has a unique id
+       }
+     });
+   }
+ };
+
+ useEffect(() => {
+   checkIfMiddle();
+   containerRef.current?.addEventListener('scroll', checkIfMiddle);
+   return () => {
+     containerRef.current?.removeEventListener('scroll', checkIfMiddle);
+   };
+ }, []);
+
+
 
   return (
     <>
@@ -88,21 +126,21 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
           <div className='text-white text-center text-[1.4rem] font-medium nsTsm:w-[80%]'>{study?.title}</div>
         </motion.div>
 
-        <motion.div initial="hidden" animate="visible" variants={slideInFromBottom(0.3)} className='frame-container '>
+        <motion.div  initial="hidden" animate="visible" variants={slideInFromBottom(0.3)} className='frame-container '>
 
           {/* details */}
           <div className='mt-[60px] nsTsm:mt-[30px] flex gap-[24px] nsTsm:flex-col'>
             {/* sidebar */}
-            <div className='w-1/6 min-h-[200px] h-auto nsTsm:hidden  box-border px-[12px] py-[20px] gap-[24px] flex flex-col max-h-screen overflow-hidden overflow-y-auto hide-scrollbar' >
+            <div className='w-1/6  min-h-[200px] h-auto nsTsm:hidden  box-border px-[12px] py-[20px] gap-[24px] flex flex-col max-h-screen overflow-hidden overflow-y-auto hide-scrollbar' >
               {AllCaseStudies[0].bp.map((data, index) => (
-                <div className={`sidebar-text ${data.title === diagrmaID ? 'highlighted' : ''}`}  onClick={() => scrollToSection(data.id.toString())} key={index} id={data.title}>
+                <div className={`sidebar-text ${index.toString() === cardInMiddle?'highlighted':''} cursor-pointer hover:text-blue-500`}  onClick={() => scrollToSection(data.id.toString())} key={index} id={data.title}>
                   <div className=''><strong>{data.id}:</strong> {data.title}</div>
                 </div>
               ))}
             </div>
 
             {/* datablock */}
-            <div  className='w-5/6 nsTsm:w-full pb-[20px] max-h-screen overflow-hidden nsTsm:max-h-none mdup:overflow-y-auto lg:overflow-y-auto xl:overflow-y-auto 2xl:overflow-y-auto   hide-scrollbar' >
+            <div ref={containerRef} className='w-5/6 nsTsm:w-full pb-[20px] max-h-screen overflow-hidden nsTsm:max-h-none mdup:overflow-y-auto lg:overflow-y-auto xl:overflow-y-auto 2xl:overflow-y-auto   hide-scrollbar' >
               <div className='w-full min-h-[400px]' >
 
                 <div className='mb-[30px]' id='overview'>
@@ -121,8 +159,8 @@ const CaseStudy = ({ params }: { params: { slug: string } }) => {
                 </div>
                 <div className='mt-[30px] flex flex-col gap-[20px]'>
                   {AllCaseStudies[0].bp.map((data, index) => (
-                    <div onClick={() => setImg({ id: data.id, dataObj: data })} >
-                      <DiagramCard  key={index} diagram={data.diagram} id={data.id} title={data.title}  description={data.description} setID={setDiagrmaID}/>
+                    <div onClick={() => setImg({ id: data.id, dataObj: data })} className='DiagramCard' id={`card-${index}`}>
+                      <DiagramCard  key={index} diagram={data.diagram} id={data.id} title={data.title}  description={data.description} />
                     </div>
                   ))}
                 </div>

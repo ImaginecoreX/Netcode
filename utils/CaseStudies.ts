@@ -418,6 +418,18 @@ export const AllCaseStudies = [
         "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_158.jpeg"
       },
       {
+        "id": 159,
+        "title":"Create comelling content for social media",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_159.jpeg"
+      },
+      {
+        "id": 160,
+        "title":"Conduct audience segmentation and targeting",
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_160.jpeg"
+      },
+      {
         "id": 161,
         "title":"Determine market and competitor pricing",
         "description":"",
@@ -764,6 +776,204 @@ export const AllCaseStudies = [
         "title":"Categorize and prioritize customer feedback", 
         "description":"",
         "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_218.jpeg"
+      },
+      {
+        "id": 219,
+        "title":"Solict and collect customer feedback and satisfaction data", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_219.jpeg"
+      },
+      {
+        "id": 220,
+        "title":"Define customer satisfaction metrics", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_220.jpeg"
+      },
+      {
+        "id": 221,
+        "title":"Empower Employees to act on customer feedback", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_221.jpeg"
+      },
+      {
+        "id": 222,
+        "title":"Establish customer feedback culture", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_222.jpeg"
+      },
+      {
+        "id": 223,
+        "title":"Assess Need for omnichannel retailing and distribution", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_223.jpeg"
+      },
+      {
+        "id": 224,
+        "title":"Integration sales channels", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_224.jpeg"
+      },
+      {
+        "id": 225,
+        "title":"Assess need for omnichannel retailing", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_225.jpeg"
+      },
+      {
+        "id": 226,
+        "title":"Assess need for consistent brand experience", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_226.jpeg"
+      },
+      {
+        "id": 227,
+        "title":"Centralized product management", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_227.jpeg"
+      },
+      {
+        "id": 228,
+        "title":"Leverage data and analytics", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_228.jpeg"
+      },
+      {
+        "id": 229,
+        "title":"Implement seamless inventory management and order fulfillment", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_229.jpeg"
+      },
+      {
+        "id": 230,
+        "title":"Invest technology infrastructure and systems", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_230.jpeg"
+      },
+      {
+        "id": 231,
+        "title":"Invest in training and support programs", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_231.jpeg"
+      },
+      {
+        "id": 232,
+        "title":"Identify crisis situation", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_232.jpeg"
+      },
+      {
+        "id": 233,
+        "title":"Identify potential crisis or emergencies", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_233.jpeg"
+      },
+      {
+        "id": 234,
+        "title":"Identify crisis management team members", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_234.jpeg"
+      },
+      {
+        "id": 235,
+        "title":"Identify potential threats and culnerabilities", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_235.jpeg"
+      },
+      {
+        "id": 236,
+        "title":"Identify key personnel for training", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_236.jpeg"
+      },
+      {
+        "id": 237,
+        "title":"Monitor traditional and social media channels", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_237.jpeg"
+      },
+      {
+        "id": 238,
+        "title":"Assess crisis situation", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_238.jpeg"
+      },
+      {
+        "id": 239,
+        "title":"Assess collaboration needs", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_239.jpeg"
+      },
+      {
+        "id": 240,
+        "title":"conduct post-crisis debriefs", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_240.jpeg"
+      },
+      {
+        "id": 241,
+        "title":"Data collective and aggregation", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_241.jpeg"
+      },
+      {
+        "id": 242,
+        "title":"Data collection and integration", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_242.jpeg"
+      },
+      {
+        "id": 243,
+        "title":"Data collection", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_243.jpeg"
+      },
+      {
+        "id": 244,
+        "title":"Develop predictive models and algorithms", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_244.jpeg"
+      },
+      {
+        "id": 245,
+        "title":"Implement data visualization tools and dashboards", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_245.jpeg"
+      },
+      {
+        "id": 246,
+        "title":"Conduct AIB testing experimentation and analysis", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_246.jpeg"
+      },
+      {
+        "id": 247,
+        "title":"Integrate data analytics into core processes", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_247.jpeg"
+      },
+      {
+        "id": 248,
+        "title":"Invest in talent development and upskilling programs", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_248.jpeg"
+      },
+      {
+        "id": 249,
+        "title":"Establish data governace frameworks and protocols", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_249.jpeg"
+      },
+      {
+        "id": 250,
+        "title":"Define digital marketing and social media strategies", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_250.jpeg"
+      },
+      {
+        "id": 251,
+        "title":"Develop digital marketing strategies and social media campaigns", 
+        "description":"",
+        "diagram":"/CaseStudies/TeaFactoryStudy/Diagrams/Diagram_251.jpeg"
       },
       {
         "id": 281,

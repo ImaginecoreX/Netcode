@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 
-const DiagramCard = ({diagram,id,title, description,setID}:DiagramCardSetterProps,) => {
+const DiagramCard = ({diagram,id,title, description}:DiagramCardProps,) => {
 
   const { ref, inView } = useInView({ triggerOnce: true }); // Hook to detect when the card is in view
 
